@@ -1,8 +1,11 @@
+import { Slide } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
 import LandingPageHeader from '../components/LandingPageHeader';
 import LandingPerks from '../components/LandingPerks';
 import Reviews from '../components/Reviews';
+import SlideShow from '../components/SlideShow';
+import SoundSectionHome from '../components/SoundSectionHome';
 
 const SectionWrapper = styled.section`
     width: 100vw;
@@ -17,18 +20,19 @@ const SectionContent = styled.article`
 export default function HomeLandingPage() {
     return (
         <div>
-            <SectionWrapper >
+            <SectionWrapper style={{backgroundImage: 'url("thirdConcert.jpg")', backgroundSize: 'cover'}} >
                 <LandingPageHeader></LandingPageHeader>
+                <SlideShow></SlideShow>
             </SectionWrapper>
 
             <SectionWrapper bgColor='#ff4d4d'>
-                <LandingPageHeader></LandingPageHeader>
-
+                <LandingPageHeader btnTextColor='#ff4d4d'></LandingPageHeader>
+                <SoundSectionHome></SoundSectionHome>
 
             </SectionWrapper>
             
             <SectionWrapper bgColor='#ffc233'>
-                <LandingPageHeader></LandingPageHeader>
+                <LandingPageHeader btnTextColor='#ffc233'></LandingPageHeader>
 
             </SectionWrapper>
 

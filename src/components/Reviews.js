@@ -35,7 +35,7 @@ const ReviewContainer = styled.article`
 
     .starIcon {
         color: black;
-        font-size: 28px;
+        font-size: 28px;    
     }
 
    

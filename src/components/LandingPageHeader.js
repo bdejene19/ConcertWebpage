@@ -31,14 +31,20 @@ const SectionHeader = styled.header`
 
     .tryNow-btn {
         width: 10vw;
+        background-color: white;
+
         justify-self: right;
         border-radius: 20px 20px ;
-        border: solid green 3px;
+        border: 1px white;
+        cursor: pointer;
     }
+`;
 
-`
+const TryNow = styled.button`
+    
+`;
 
-export default function LandingPageHeader() {
+export default function LandingPageHeader(props) {
     return (
         <SectionHeader>
             <div className='header-text'>
@@ -47,8 +53,7 @@ export default function LandingPageHeader() {
 
             </div>
 
-            <button className="tryNow-btn" showTryNow='inline-block'>Try it now</button>
-            
+            <button className="tryNow-btn" style={{color: `${props.btnTextColor}`}} showTryNow='inline-block'>Try it now</button>     
         </SectionHeader>
     )
 }

@@ -33,6 +33,11 @@ const ContactFooter = styled.footer`
         font-weight: 300;
     }
 
+    h6 {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
 `;
 
 export default function EmailFooter() {

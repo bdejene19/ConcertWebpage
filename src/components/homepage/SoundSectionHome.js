@@ -9,6 +9,7 @@ export const SoundContainer = styled.article`
     color: white;
     .sound-content {
         padding: 2em;
+    
     }
     h1 {
         font-size: 42px;
@@ -31,8 +32,8 @@ export const SeeDemo = styled.button`
     background-color: white;
     border: solid white;
     color: #ff4d4d;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 900;
     cursor: pointer;
 `;
 

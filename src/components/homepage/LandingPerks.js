@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const PerksGrid = styled.article`
+export const PerksGrid = styled.article`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     color: white;
@@ -24,7 +24,6 @@ const PerksGrid = styled.article`
     }
 `;
 
-
 const PerksContainer = styled.div`
     padding: 5rem;
     .perksTitle {
@@ -35,7 +34,7 @@ const PerksContainer = styled.div`
 `;
 
 
-const SubHeader = styled.h3`
+export const SubHeader = styled.h3`
     font-size: 28px;
     color: ${props => props.subHeadColor};
     border-top: ${props => `solid ${props.subHeadColor} 1px`} ;

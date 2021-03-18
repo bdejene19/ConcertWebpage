@@ -1,11 +1,28 @@
-import { green } from '@material-ui/core/colors';
 import './App.css';
 import HomeLandingPage from './pages/HomeLandingPage';
+import Pricing from './pages/Pricing'
+import { 
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
 
 function App() {
   return (
     <div>
-      <HomeLandingPage></HomeLandingPage>
+      <Router>
+        <Switch>
+          <Route exact path='/' component={HomeLandingPage}></Route>
+
+          <Route exact path='/pricing' component={Pricing}></Route>
+        </Switch>
+        {/* <HomeLandingPage></HomeLandingPage> */}
+        
+
+
+      </Router>
+      
     </div>
   );
 }

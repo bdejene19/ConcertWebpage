@@ -15,12 +15,17 @@ const DownloadAppText = styled.article`
     }
 
     h1 {
-        font-size: 44px; 
+        font-size: 48px; 
         color: #ff4d4d;
+        white-space: 300px
     }
 
     .downloadText {
         margin-left: 5em;
+    }
+
+    p {
+        font-size: 32px;
     }
 `;
 

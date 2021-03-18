@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import LandingPageHeader from '../components/LandingPageHeader';
-import LandingPerks from '../components/LandingPerks';
-import Reviews from '../components/Reviews';
-import SlideShow from '../components/SlideShow';
-import SoundSectionHome from '../components/SoundSectionHome';
-import Seats from '../components/Seats';
-import EmailFooter from '../components/EmailFooter';
-import DownloadApp from '../components/DownloadApp';
+import LandingPageHeader from '../components/homepage/LandingPageHeader';
+import LandingPerks from '../components/homepage/LandingPerks';
+import Reviews from '../components/homepage/Reviews';
+import SlideShow from '../components/homepage/SlideShow';
+import SoundSectionHome from '../components/homepage/SoundSectionHome';
+import Seats from '../components/homepage/Seats';
+import EmailFooter from '../components/homepage/EmailFooter';
+import DownloadApp from '../components/homepage/DownloadApp';
 
 const SectionWrapper = styled.section`
     width: 100vw;

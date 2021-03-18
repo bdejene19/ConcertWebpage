@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
-
+import {Link} from 'react-router-dom';
 
 
 const SectionHeader = styled.header`
@@ -32,11 +32,18 @@ const SectionHeader = styled.header`
     .tryNow-btn {
         width: 10vw;
         background-color: white;
-
+        height: 6vh;
         justify-self: right;
         border-radius: 20px 20px ;
         border: 1px white;
         cursor: pointer;
+        outline: none;
+
+    }
+
+    .pricing-link {
+        text-align: right;
+        outline: none;
     }
 `;
 
@@ -52,8 +59,11 @@ export default function LandingPageHeader(props) {
                 <h2>EXP|CON</h2>
 
             </div>
+            
+            <Link to='/pricing' className='pricing-link'>
+                <button className="tryNow-btn" style={{color: `${props.btnTextColor}`}} showTryNow='inline-block'><b>Try it now</b></button>     
 
-            <button className="tryNow-btn" style={{color: `${props.btnTextColor}`}} showTryNow='inline-block'>Try it now</button>     
+            </Link>
         </SectionHeader>
     )
 }

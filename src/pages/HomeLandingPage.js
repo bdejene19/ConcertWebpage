@@ -1,4 +1,3 @@
-import { Slide } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
 import LandingPageHeader from '../components/LandingPageHeader';
@@ -6,6 +5,9 @@ import LandingPerks from '../components/LandingPerks';
 import Reviews from '../components/Reviews';
 import SlideShow from '../components/SlideShow';
 import SoundSectionHome from '../components/SoundSectionHome';
+import Seats from '../components/Seats';
+import EmailFooter from '../components/EmailFooter';
+import DownloadApp from '../components/DownloadApp';
 
 const SectionWrapper = styled.section`
     width: 100vw;
@@ -33,7 +35,7 @@ export default function HomeLandingPage() {
             
             <SectionWrapper bgColor='#ffc233'>
                 <LandingPageHeader btnTextColor='#ffc233'></LandingPageHeader>
-
+                <Seats></Seats>
             </SectionWrapper>
 
             <SectionWrapper bgColor='black'>
@@ -45,6 +47,9 @@ export default function HomeLandingPage() {
                 <LandingPageHeader></LandingPageHeader>
                 <Reviews></Reviews>
             </SectionWrapper>
+
+            <DownloadApp></DownloadApp>
+            <EmailFooter></EmailFooter>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'; 
 import styled from 'styled-components';
 
-const SoundContainer = styled.article`
+export const SoundContainer = styled.article`
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto;
@@ -24,7 +24,7 @@ const SoundContainer = styled.article`
     }
 `;
 
-const SeeDemo = styled.button`
+export const SeeDemo = styled.button`
     width: 15vw;
     height: 7vh;
     border-radius: 30px 30px;

@@ -16,6 +16,8 @@ function App() {
           <Route exact path='/' component={HomeLandingPage}></Route>
 
           <Route exact path='/pricing' component={Pricing}></Route>
+
+          <Route exact path='/payNow'></Route>
         </Switch>
         {/* <HomeLandingPage></HomeLandingPage> */}
         

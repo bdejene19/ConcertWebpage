@@ -9,7 +9,7 @@ import Seats from '../components/homepage/Seats';
 import EmailFooter from '../components/homepage/EmailFooter';
 import DownloadApp from '../components/homepage/DownloadApp';
 
-const SectionWrapper = styled.section`
+export const SectionWrapper = styled.section`
     width: 100vw;
     height: 100vh;
     background-color: ${props => props.bgColor};
@@ -40,7 +40,7 @@ export default function HomeLandingPage() {
 
             <SectionWrapper bgColor='black'>
                 <LandingPageHeader></LandingPageHeader>
-                <LandingPerks></LandingPerks>
+                <LandingPerks titleOneColor='#ff4d4d' titleTwoColor='aqua' titleThreeColor='#ffc233'></LandingPerks>
             </SectionWrapper>
 
             <SectionWrapper bgColor='aqua'>

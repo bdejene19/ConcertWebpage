@@ -44,7 +44,7 @@ export const SubHeader = styled.h3`
 
 `;
 
-export default function LandingPerks() {
+export default function LandingPerks(props) {
     return (
         <PerksContainer>
             <h2 className='perksTitle' style={{color: 'white'}}>PERKS</h2>
@@ -52,16 +52,16 @@ export default function LandingPerks() {
             <PerksGrid key='perks'>
 
                 <div>
-                    <SubHeader subHeadColor='#ff4d4d'>Subscription<br></br>Payment <br></br>Model</SubHeader>
+                    <SubHeader subHeadColor={props.titleOneColor}>Subscription<br></br>Payment <br></br>Model</SubHeader>
                     {/* <h3 subHeadColor='brown'>Subscription<br></br>Payment <br></br>Model</h3> */}
                     <p>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
                 </div>
                 <div>
-                    <SubHeader subHeadColor='aqua'>No Fee<br></br>Cancelation<br></br>Policy</SubHeader>
+                    <SubHeader subHeadColor={props.titleTwoColor}>No Fee<br></br>Cancelation<br></br>Policy</SubHeader>
                     <p>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
                 </div>
                 <div>
-                    <SubHeader subHeadColor='#ffc233'>Subscription<br></br>Payment <br></br>Model</SubHeader>
+                    <SubHeader subHeadColor={props.titleThreeColor}>Subscription<br></br>Payment <br></br>Model</SubHeader>
                     <p>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
                 </div>
             </PerksGrid>

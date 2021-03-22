@@ -13,21 +13,6 @@ const SectionHeader = styled.header`
     font-size: 16px;
     padding: 2em;
 
-    .hamburgerIcon{
-        font-size: 36px;
-        cursor: pointer;
-    }
-
-    h2 {
-        padding-top: 2px;
-        font-size: 26px;
-    }
-
-    .header-text {
-        display: flex;
-        grid-gap: 1em;
-        color: white;
-    }
 
     .tryNow-btn {
         width: 10vw;
@@ -47,22 +32,34 @@ const SectionHeader = styled.header`
     }
 `;
 
-const TryNow = styled.button`
-    
-`;
+const HeaderContent = styled.div`
+    display: flex;
+    grid-gap: 1em;
+    color: ${props => props.headerColor || 'white' };
 
+    .hamburgerIcon{
+        font-size: 36px;
+        cursor: pointer;
+    }
+
+    h2 {
+        padding-top: 2px;
+        font-size: 26px;
+        font-weight: 500;
+    }
+
+`;
 export default function LandingPageHeader(props) {
     return (
         <SectionHeader>
-            <div className='header-text'>
+            <HeaderContent headerColor={props.headerColor}>
                 <MenuIcon fontSize='large' className='hamburgerIcon'/>
                 <h2>EXP|CON</h2>
 
-            </div>
-            
+            </HeaderContent>
+                            
             <Link to='/pricing' className='pricing-link'>
                 <button className="tryNow-btn" style={{color: `${props.btnTextColor}`}} showTryNow='inline-block'><b>Try it now</b></button>     
-
             </Link>
         </SectionHeader>
     )

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {SubHeader} from '../homepage/LandingPerks';
 import LandingPageHeader from '../homepage/LandingPageHeader';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
+import {Link} from 'react-router-dom';
 
 const PricingContainer = styled.article`
     display: grid;
@@ -16,6 +17,7 @@ const PricingContainer = styled.article`
 
     h1 {
         font-size: 48px;
+        font-weight: bold;
     }  
 
     .pricing-caption {
@@ -27,10 +29,7 @@ const PricingContainer = styled.article`
         font-size: 16px;
         align-items: center;
         justify-self: center;
-    
     }
-
-   
 `;
 
 
@@ -40,12 +39,6 @@ const Prices = styled.div`
     color: white;
     grid-template-columns: repeat(3, auto);
   
-    column-gap: 0;
-
-
-    hr {
-        width: 40%;
-    }
 
     h1 {
         font-size: 64px;
@@ -79,10 +72,9 @@ const Prices = styled.div`
     }
 `;
 
-const PricingText = styled.div`
-    color: white;
-
-   
+export const HorizontalBreak = styled.hr`
+    border: ${props => `${props.borderColor} 1px solid` || 'white'};
+    width: 35%;
 
 `;
 
@@ -98,7 +90,7 @@ export default function PricePlans() {
                 <Prices>  
                     <div>
                         <div style={{color: '#ff4d4d'}}>
-                            <SubHeader className='plan-name'>Basic<hr style={{border: 'solid #ff4d4d 1px'}}></hr>Monthly</SubHeader>
+                            <SubHeader className='plan-name'>Basic<HorizontalBreak borderColor='#ff4d4d'></HorizontalBreak>Monthly</SubHeader>
                             <h1><b>$9</b></h1>
                         </div>
                         <br></br>
@@ -132,12 +124,14 @@ export default function PricePlans() {
                         </div>
 
                         <br></br>
-                        <button className='tryNow' style={{backgroundColor: '#ff4d4d'}}><b>SELECT</b></button>
+                        <Link to='/payNow'>
+                            <button className='tryNow' style={{backgroundColor: '#ff4d4d'}}><b>SELECT</b></button>
+                        </Link>
                     </div>
 
                     <div>
                         <div style={{color: '#ffc233'}}>
-                            <SubHeader className='plan-name'>Advanced<hr style={{border: 'solid #ffc233 1px'}}></hr>Yearly</SubHeader>
+                            <SubHeader className='plan-name'>Advanced<HorizontalBreak borderColor='#ffc223'></HorizontalBreak>Yearly</SubHeader>
                             <h1><b>$99</b></h1>
                         </div>
                         <br></br>
@@ -172,13 +166,15 @@ export default function PricePlans() {
                         </div>
 
                         <br></br>
-                        <button className='tryNow' style={{backgroundColor: '#ffc233'}}><b>SELECT</b></button>
+                        <Link to='/payNow'>
+                            <button className='tryNow' style={{backgroundColor: '#ffc233'}}><b>SELECT</b></button>
+                        </Link>
 
                     </div>
 
                     <div>
                         <div style={{color: 'aqua'}}>
-                            <SubHeader className='plan-name'>Pro<hr style={{border: 'solid aqua 1px'}}></hr>Yearly</SubHeader>
+                            <SubHeader className='plan-name'>Pro<HorizontalBreak borderColor='aqua'></HorizontalBreak>Yearly</SubHeader>
                             <h1><b>$120</b></h1>
                         </div>
 
@@ -214,8 +210,10 @@ export default function PricePlans() {
                             <p>Features.</p>
                         </div>
                         <br></br>
-
-                        <button className='tryNow' style={{backgroundColor: 'aqua'}}><b>SELECT</b></button>
+                        
+                        <Link to='/payNow'>
+                            <button className='tryNow' style={{backgroundColor: 'aqua'}}><b>SELECT</b></button>
+                        </Link>
 
                     </div>
                 </Prices>

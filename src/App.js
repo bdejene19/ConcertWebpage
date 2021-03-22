@@ -1,6 +1,7 @@
 import './App.css';
 import HomeLandingPage from './pages/HomeLandingPage';
-import Pricing from './pages/Pricing'
+import Pricing from './pages/Pricing';
+import Payment from './pages/Payment';
 import { 
   BrowserRouter as Router,
   Switch,
@@ -14,14 +15,9 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/' component={HomeLandingPage}></Route>
-
-          <Route exact path='/pricing' component={Pricing}></Route>
-
-          <Route exact path='/payNow'></Route>
-        </Switch>
-        {/* <HomeLandingPage></HomeLandingPage> */}
-        
-
+          <Route path='/pricing' component={Pricing}></Route>
+          <Route path='/payNow' component={Payment}></Route>
+        </Switch>        
 
       </Router>
       

@@ -15,15 +15,11 @@ export const SectionWrapper = styled.section`
     background-color: ${props => props.bgColor};
 `;
 
-const SectionContent = styled.article`
-
-`;
 
 export default function HomeLandingPage() {
     return (
         <div>
-            <SectionWrapper style={{backgroundImage: 'url("thirdConcert.jpg")', backgroundSize: 'cover'}} >
-                <LandingPageHeader></LandingPageHeader>
+            <SectionWrapper>
                 <SlideShow></SlideShow>
             </SectionWrapper>
 

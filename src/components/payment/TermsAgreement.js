@@ -2,16 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 const TermsContainer = styled.p`
-    color: lightgrey;
-    font-size: 18px;
+    color: black;
+    font-size: 16px;
+    letter-spacing: 1px;
     width: 80%;
     padding-top: 1em;
     padding-bottom: 1em;
-    margin-left: 2.3em;
+    margin-left: 2em;
 
     a {
         color: blue;
         text-decoration: none;
+        font-weight: 900;
     }
 `;
 export default function TermsAgreement() {

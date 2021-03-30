@@ -8,13 +8,15 @@ const ReviewContainer = styled.article`
     grid-template-rows: 1fr 1fr;
     color: white;
     padding: 5em;
+    letter-spacing: 3px;
+
     
     h2 {
         grid-row: 1;
         grid-column: 2/5;
-        font-size: 40px;
+        font-size: 60px;
         margin: 0;
-        padding: 0;
+        padding-bottom: 1.5em;
     }
 
     .reviewImgs {
@@ -26,16 +28,16 @@ const ReviewContainer = styled.article`
     .reviewContent-container {
         margin-top: -1.5em;
         h4 {
-            font-size: 20px;
+            font-size: 32px;
             padding-top: 0.25em;
             padding-bottom: 0.5em;
-
         }
     }
 
     .starIcon {
         color: black;
-        font-size: 28px;    
+        font-size: 34px;   
+        font-weight: 900; 
     }
 
    
@@ -43,7 +45,7 @@ const ReviewContainer = styled.article`
     p {
         width: 60%;
         color: black;
-        font-size: 18px;
+        font-size: 22px;
     }
 
 `;
@@ -55,7 +57,7 @@ export default function Reviews() {
                 <img src='/.png' alt=''></img>
             </div>
 
-            <h2>Reviews</h2>
+            <h2>REVIEWS</h2>
             <div className='reviewContent-container'>
                 <StarRateIcon className='starIcon'></StarRateIcon>
                 <StarRateIcon className='starIcon'></StarRateIcon>
@@ -65,7 +67,7 @@ export default function Reviews() {
 
                 <h4>ARTIST</h4>
 
-                <p>"Love it, it's the Best. I can't live without it</p>
+                <p>"Love it, it's the Best. I can't live without it!"</p>
             </div>
             <div className='reviewContent-container'>
                 <StarRateIcon className='starIcon'></StarRateIcon>
@@ -76,7 +78,7 @@ export default function Reviews() {
 
                 <h4>PRODUCER</h4>
 
-                <p>"Love it, it's the Best. I can't live without it</p>
+                <p>"Love it, it's the Best. I can't live without it!"</p>
             </div>
 
             <div className='reviewContent-container'>
@@ -88,8 +90,8 @@ export default function Reviews() {
 
                 <h4>MUSIC FAN</h4>
 
-                <p>"Love it, it's the Best. I can't live without it</p>
-            </div>
+                <p>"Love it, it's the Best. I can't live without it!"</p>
+                </div>
         </ReviewContainer>
     )
 }

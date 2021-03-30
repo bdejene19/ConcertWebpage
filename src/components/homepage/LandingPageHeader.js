@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import {Link} from 'react-router-dom';
@@ -36,10 +36,18 @@ const HeaderContent = styled.div`
     display: flex;
     grid-gap: 1em;
     color: ${props => props.headerColor || 'white' };
+    
 
     .hamburgerIcon{
         font-size: 36px;
         cursor: pointer;
+    }
+
+    #hamburger-effect {
+        height: 7vh;
+  
+
+
     }
 
     h2 {
@@ -50,6 +58,19 @@ const HeaderContent = styled.div`
 
 `;
 export default function LandingPageHeader(props) {
+    const [sideMenuOpen, setSideMenuOpen] = useState(false);
+    // const showMenu = () => {
+
+    //     if (sideMenuOpen) {
+    //         document.getElementById('hamburger-effect').style.display = 'none'
+    //         setSideMenuOpen(false);
+    //     } else {
+    //         document.getElementById('hamburger-effect').style.display = 'inline-block'
+    //         setSideMenuOpen(false);
+
+    //     }
+
+    // }
     return (
         <SectionHeader>
             <HeaderContent headerColor={props.headerColor}>

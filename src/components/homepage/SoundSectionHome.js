@@ -9,26 +9,34 @@ export const SoundContainer = styled.article`
     color: white;
     .sound-content {
         padding: 2em;
+        padding-left: 0;
     
     }
     h1 {
-        font-size: 42px;
+        font-size: 60px;
+        transform-origin: 0 0;
+        width: fit-content;
+        transform: scaleX(1.5);
+        letter-spacing: 4px;
+        font-weight: 900;
+
     }
 
     p {
-        font-size: 34px;
+        font-size: 48px;
+        letter-spacing: 3px;
+        transform-origin: 0 0;
+        transform: scaleX(1.2);
         color: black;
         padding-top: 0.5em;
-        padding-bottom: 0.5em;
-        padding-left: 0;
-        padding-right: 3em;
+        padding-bottom: 1em;
     }
 `;
 
 export const SeeDemo = styled.button`
-    width: 15vw;
-    height: 7vh;
-    border-radius: 30px 30px;
+    width: 22vw;
+    height: 9vh;
+    border-radius: 40px 40px;
     background-color: white;
     border: solid white;
     color: #ff4d4d;

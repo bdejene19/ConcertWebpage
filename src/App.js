@@ -6,7 +6,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom';
 
 function App() {
@@ -18,9 +17,7 @@ function App() {
           <Route path='/pricing' component={Pricing}></Route>
           <Route path='/payNow' component={Payment}></Route>
         </Switch>        
-
-      </Router>
-      
+      </Router>    
     </div>
   );
 }

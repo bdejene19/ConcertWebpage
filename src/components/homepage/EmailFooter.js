@@ -38,6 +38,9 @@ const ContactFooter = styled.footer`
         font-weight: 400;
     }
 
+    p {
+        padding-left: 2.2vw
+    }
 `;
 
 export default function EmailFooter() {
@@ -50,7 +53,7 @@ export default function EmailFooter() {
 
             <div className='copyright-content'>
                 <h3>EXP|CON</h3>
-                <p>2019 <CopyrightIcon></CopyrightIcon> All rights reserved | Speer Technologies Incorporated</p>
+                <p>2019 <CopyrightIcon style={{fontSize: 16}}></CopyrightIcon> All rights reserved | Speer Technologies Incorporated</p>
             </div>
         </ContactFooter>
     )

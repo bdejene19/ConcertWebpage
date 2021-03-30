@@ -9,8 +9,10 @@ const UserBillingInfo = styled.div`
     grid-column-gap: 5em;
     align-items: center;
     justify-content: center;
+    letter-spacing: 3px;
     h1 {
         font-size: 48px;
+        letter-spacing: 5px;
     }
 
     h6 {
@@ -45,19 +47,16 @@ const UserBillingInfo = styled.div`
             width: 100%;
             font-size: 16px;
             padding: 1em;
-            height: 4vh;
+            height: 6vh;
             border-radius: 0;
             
         } 
 
-        input:focus {
-            margin-bottom: 1px;
-            bottom: 100%;
-        }
-        select {
+        #country {
             width: 100%;
-            height: 4vh;
+            height: 6vh;
             border-radius: 0;
+            padding: 1em;
         } 
     }
 
@@ -69,7 +68,7 @@ const UserBillingInfo = styled.div`
             width: 100%;
             font-size: 16px;
             padding: 1em;
-            height: 4vh;
+            height: 6vh;
             border-radius: 0;
         }      
     }

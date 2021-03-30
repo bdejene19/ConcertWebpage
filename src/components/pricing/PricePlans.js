@@ -74,7 +74,7 @@ const Prices = styled.div`
 
 export const HorizontalBreak = styled.hr`
     border: ${props => `${props.borderColor} 1px solid` || 'white'};
-    width: 35%;
+    width: 30%;
 
 `;
 

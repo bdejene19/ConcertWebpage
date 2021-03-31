@@ -7,6 +7,7 @@ const UserBillingInfo = styled.div`
     display: grid;
     grid-template-columns: 40vw 40vw;
     grid-column-gap: 5em;
+    padding-bottom: 20em;
     align-items: center;
     justify-content: center;
     letter-spacing: 3px;
@@ -16,32 +17,54 @@ const UserBillingInfo = styled.div`
     }
 
     h6 {
-        font-size: 36px;
+        font-size: 30px;
         font-weight: 300;
         /* padding-bottom: 0.5em; */
+        padding-bottom: 1em;
 
     }
 
     .payment-title {
         grid-column: 1/3;
+        padding-top: 1em;
         padding-bottom: 1em;
     }
+
 
     .payment-1 {
-        padding-bottom: 1em;
+        padding-bottom: 5em;
+        grid-column: 1/3;
+        grid-row: 1;
     }
 
-    #form-p1 {
-        margin-left: 2.3em;
-    }
+  
 
     label {
         font-weight: bold;
     }
   
-    .payment-2 {
+    .plan-choices {
+        border: solid green;
+        font-size: 24px;
+        column-gap: 1em;
+        & input::before {
+            border: solid white 3px;
+        }
+
+        label {
+            padding-right: 1em;
+            padding-left: 10px;
+            
+        }
+
+        
+    }
+
+    
+  
+
+    form {
         width: 100%;
-        grid-column: 1;
         grid-row: 2;
         input  {
             width: 100%;
@@ -56,23 +79,12 @@ const UserBillingInfo = styled.div`
             width: 100%;
             height: 6vh;
             border-radius: 0;
-            padding: 1em;
+            /* padding: 1em; */
         } 
+        & div {
+            padding-top: 0.5em;
+        }
     }
-
-    .payment-3 {
-        grid-column: 2;
-        grid-row: 2;
-        width: 100%;
-        input  {
-            width: 100%;
-            font-size: 16px;
-            padding: 1em;
-            height: 6vh;
-            border-radius: 0;
-        }      
-    }
-
     .smallText-input {
         display: flex;
         grid-gap: 2em;
@@ -97,14 +109,13 @@ export default function BillingSection() {
             <div className='payment-1'>
                 <h1 className='payment-title'>PAYMENT</h1>
                 <h6>1. Select your plan</h6>
-                <div>
+                <div className='plan-choices'>
                     <input type='radio' name='plan-type' id='basic'></input>
-                    <label for='basic'>Basic</label>
+                    <label for='basic' style={{color: '#ff4d4d'}}>BASIC</label>
                     <input type='radio' name='plan-type' id='advanced' value='advanced'></input>
-                    <label for='advanced'>Advanced</label>
+                    <label for='advanced' style={{color: '#ffc233'}}>ADVANCED</label>
                     <input type='radio' name='plan-type' id='pro' value='pro'></input>
-                    <label for='basic'>Pro</label>
-                    
+                    <label for='basic' style={{color: 'aqua'}}>PRO</label>      
                 </div>
             </div>
 
@@ -190,7 +201,7 @@ export default function BillingSection() {
                                 <label for='expiry-year'>
                                     EXPIRY YEAR
                                 </label><br></br>
-                                <input type='text' id='postalCode' className='smallText-bar' id='expiry-year'></input>
+                                <input type='text' className='smallText-bar' id='expiry-year'></input>
                             </div>           
                         </div>
 
@@ -205,7 +216,6 @@ export default function BillingSection() {
                 </div>
 
             </div>
-            <br></br>
            
 
             <TermsAgreement ></TermsAgreement>

@@ -3,12 +3,10 @@ import styled from 'styled-components';
 
 const TermsContainer = styled.p`
     color: black;
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 1px;
     width: 80%;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    margin-left: 2em;
+    padding-top: 3em;
 
     a {
         color: blue;

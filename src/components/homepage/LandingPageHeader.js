@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import {Link} from 'react-router-dom';
@@ -15,11 +15,11 @@ const SectionHeader = styled.header`
 
 
     .tryNow-btn {
-        width: 10vw;
+        width: 12vw;
         background-color: white;
         height: 6vh;
         justify-self: right;
-        border-radius: 20px 20px ;
+        border-radius: 30px 30px ;
         border: 1px white;
         cursor: pointer;
         outline: none;
@@ -41,24 +41,36 @@ const HeaderContent = styled.div`
     .hamburgerIcon{
         font-size: 36px;
         cursor: pointer;
+        z-index: 1;
     }
 
-    #hamburger-effect {
-        height: 7vh;
-  
-
-
+    .menu {
+        position: absolute;
+        visibility: hidden;
+        height: 0vh;
+        width: 0vw;
+        margin: -2em;
+        background-color: black;
+        padding: 5.3em;
+        overflow: hidden;
+        letter-spacing: 2px;
+        h1 {
+            font-size: 32px;
+            padding-bottom: 0.5em;
+            width: max-content;
+            font-weight: 500;
+        }
     }
-
     h2 {
         padding-top: 2px;
         font-size: 26px;
         font-weight: 500;
+        z-index: 1;
     }
 
 `;
 export default function LandingPageHeader(props) {
-    const [sideMenuOpen, setSideMenuOpen] = useState(false);
+
     // const showMenu = () => {
 
     //     if (sideMenuOpen) {
@@ -71,11 +83,29 @@ export default function LandingPageHeader(props) {
     //     }
 
     // }
+
+    const openMenu = () => {
+
+
+        document.getElementById('menu').style.cssText = `
+            transition: 1s linear;
+            width: 30vw; 
+            height: 40vh;
+            border-radius: 0 45% 50% 50%;
+            visibility: visible;
+        `;
+    }
     return (
         <SectionHeader>
             <HeaderContent headerColor={props.headerColor}>
-                <MenuIcon fontSize='large' className='hamburgerIcon'/>
+                <MenuIcon fontSize='large' className='hamburgerIcon' id='menu-icon' onClick={openMenu}/>
                 <h2>EXP|CON</h2>
+
+                <span className='menu' id='menu'>
+                    <h1>WHAT IS IT?</h1>
+                    <h1>PERKS</h1>
+                    <h1>PRICING</h1>
+                </span>
 
             </HeaderContent>
                             

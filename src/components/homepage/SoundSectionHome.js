@@ -16,17 +16,16 @@ export const SoundContainer = styled.article`
         font-size: 60px;
         transform-origin: 0 0;
         width: fit-content;
-        transform: scaleX(1.5);
-        letter-spacing: 4px;
+        transform: scaleX(1.25);
+        letter-spacing: 3px;
         font-weight: 900;
 
     }
 
     p {
-        font-size: 48px;
+        font-size: 47px;
         letter-spacing: 3px;
         transform-origin: 0 0;
-        transform: scaleX(1.2);
         color: black;
         padding-top: 0.5em;
         padding-bottom: 1em;

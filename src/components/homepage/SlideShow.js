@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import LandingPageHeader from './LandingPageHeader';
 
@@ -25,13 +25,18 @@ const SlideShowWrapper = styled.article`
             align-self: center;
 
             h1 {
-                font-size: 60px;
+                font-size: 64px;
+                letter-spacing: 5px;
             }
             p {
                 
                 padding-top: 1em;
                 padding-bottom: 1em;
-                font-size: 48px;
+                letter-spacing: 3px;
+                width: 50%;
+                transform: translateX(50%);
+                font-size: 30px;
+                align-self: center;
             }
         } 
     }
@@ -40,7 +45,7 @@ const SlideShowWrapper = styled.article`
         width: 15vw;
         height: 7vh;
         background-color: white;
-        background: linear-gradient(90deg, aqua 10%, blue 30%, red 55%, yellow );
+        background: linear-gradient(90deg, aqua, blue 33%, purple 50%, red 66%, orange, yellow 99% );
         color: white;
         justify-self: right;
         border-radius: 25px 25px ;
@@ -53,8 +58,8 @@ const SlideShowWrapper = styled.article`
         grid-row: 2;
         .dot {
             cursor: pointer;
-            height: 3vh;
-            width: 2vw;
+            height: 2vh;
+            width: 1vw;
             margin: 0 0.5em;
             border: solid 2px #bbb;
             border-radius: 50%;
@@ -102,6 +107,7 @@ export default function SlideShow() {
                 <div className='slideShowText'>
                     <h1>INTERACTIVE CONCERT EXPERIENCE</h1>
                     <p>Experience your favourite artists like never before and from the comfort of your own home.</p>
+
                     <button className='rainbowTryNow'>Try it now</button>
                 </div>
 

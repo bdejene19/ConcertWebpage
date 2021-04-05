@@ -22,7 +22,6 @@ const HomeContainer = styled.div`
     width: 100vw;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
-
     position: absolute;
 
     .scrollTo {
@@ -60,7 +59,7 @@ export default function HomeLandingPage() {
                 <Reviews></Reviews>
             </SectionWrapper>
 
-            <DownloadApp></DownloadApp>
+            <DownloadApp className='scrollTo'></DownloadApp>
             <EmailFooter></EmailFooter>
         </HomeContainer>
 

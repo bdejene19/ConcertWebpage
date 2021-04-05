@@ -45,10 +45,11 @@ const SlideShowWrapper = styled.article`
         width: 15vw;
         height: 7vh;
         background-color: white;
-        background: linear-gradient(90deg, aqua, blue 33%, purple 50%, red 66%, orange, yellow 99% );
+        background: linear-gradient(90deg, aqua 0%, blue 49%, red 80%, yellow 100%);
         color: white;
         justify-self: right;
         border-radius: 25px 25px ;
+        font-size: 18px;
         border: 1px white;
         cursor: pointer;
     }
@@ -69,6 +70,18 @@ const SlideShowWrapper = styled.article`
     }
    
 `;
+
+export const TryNowBtn = styled.button`
+        width: 15vw;
+        height: 7vh;
+        background-color: white;
+        background: linear-gradient(90deg, aqua 0%, blue 49%, red 80%, yellow 100%);
+        color: white;
+        justify-self: right;
+        border-radius: 25px 25px ;
+        font-size: 18px;
+        border: 1px white;
+        cursor: pointer;`;
 
 
 
@@ -94,10 +107,37 @@ export default function SlideShow() {
         
     })
 
+    setInterval(() => {
+        count++;
+        if (count === backgroundImages.length) {
+            // document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
+            count = 0;      
+        } 
+        document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
+        document.getElementById(`${count}`).style.backgroundColor = '#bbb';
+        document.getElementById('slide-wrapper').style.transition = "0.5s linear";
+
+        if (count - 1 > 0) {
+            document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
+
+        } 
+        
+        if (count - 1 === 0) {
+            document.getElementById(`0`).style.backgroundColor = 'transparent';
+
+        } 
+
+        if (count - 1 < 0) {
+            document.getElementById(`${backgroundImages.length - 1}`).style.backgroundColor = 'transparent';
+
+        }
+    }, 5000);
 
     const chooseBgPhoto = (photoIndex) => {
         document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[photoIndex]})`;
-        document.getElementById('slide-wrapper').style.transition = "0.5s linear";   
+        document.getElementById('slide-wrapper').style.transition = "0.5s linear";  
+        
+        document.getElementById(`${photoIndex}`).style.backgroundColor = '#bbb'
     }
     return (
         <SlideShowWrapper id='slide-wrapper'>
@@ -108,7 +148,7 @@ export default function SlideShow() {
                     <h1>INTERACTIVE CONCERT EXPERIENCE</h1>
                     <p>Experience your favourite artists like never before and from the comfort of your own home.</p>
 
-                    <button className='rainbowTryNow'>Try it now</button>
+                    <TryNowBtn>TRY IT NOW</TryNowBtn>
                 </div>
 
                 <div className='client-chooseBg'>

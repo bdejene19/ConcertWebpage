@@ -30,6 +30,14 @@ export const SoundContainer = styled.article`
         padding-top: 0.5em;
         padding-bottom: 1em;
     }
+
+    .sound-photos {
+        transform: translate(10%, -20%);
+
+        img {
+            width: 40vw;
+        }
+    }
 `;
 
 export const SeeDemo = styled.button`
@@ -54,6 +62,7 @@ export default function SoundSectionHome() {
             </div>
 
             <div className='sound-photos'>
+                <img src='speaker2.png' alt='stereo'></img>
 
             </div>
         </SoundContainer>

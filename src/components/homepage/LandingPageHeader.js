@@ -69,6 +69,8 @@ const HeaderContent = styled.div`
     }
 
 `;
+
+
 export default function LandingPageHeader(props) {
 
     // const showMenu = () => {

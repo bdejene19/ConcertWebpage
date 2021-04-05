@@ -9,6 +9,7 @@ const ReviewContainer = styled.article`
     color: white;
     padding: 5em;
     letter-spacing: 3px;
+    grid-gap: 3em;
 
     
     h2 {
@@ -22,6 +23,11 @@ const ReviewContainer = styled.article`
     .reviewImgs {
         grid-column: 1;
         grid-row: 1/3;
+
+        img {
+            width: 25vw;
+            transform: rotate(90deg);
+        }
 
     }
 
@@ -43,7 +49,7 @@ const ReviewContainer = styled.article`
    
 
     p {
-        width: 60%;
+        width: 80%;
         color: black;
         font-size: 22px;
     }
@@ -54,7 +60,7 @@ export default function Reviews() {
     return (
         <ReviewContainer>
             <div className='reviewImgs'>
-                <img src='/.png' alt=''></img>
+                <img src='speaker3.png' alt='alternative speaker'></img>
             </div>
 
             <h2>REVIEWS</h2>

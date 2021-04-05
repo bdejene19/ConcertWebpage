@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import LandingPageHeader from './LandingPageHeader';
+import { TryNowBtn } from './SlideShow';
 
 
 const DownloadAppText = styled.article`
@@ -41,7 +42,7 @@ export default function DownloadApp() {
                 <p style={{textAlign: 'left'}}>Purchase and download the app.</p>
             </div>
             <div style={{textAlign: 'center'}}>
-                where my try now button will go
+                <TryNowBtn>TRY IT NOW</TryNowBtn>
             </div>
         </DownloadAppText>
     )

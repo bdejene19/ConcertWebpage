@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { TryNowBtn } from '../homepage/SlideShow';
 
 const TermsContainer = styled.p`
     color: black;
@@ -13,11 +14,18 @@ const TermsContainer = styled.p`
         text-decoration: none;
         font-weight: 900;
     }
+
+    p {
+        padding-bottom: 2em;
+    }
 `;
 export default function TermsAgreement() {
     return (
         <TermsContainer>
-            By continuing, I acknowledge that I've read and agree to the <a href='#'>Terms of Service</a> & <a href='#'>Privacy and Policy</a>.
+            <p>By continuing, I acknowledge that I've read and agree to the <a href='#'>Terms of Service</a> & <a href='#'>Privacy and Policy</a></p>.
+            <TryNowBtn>DOWNLOAD</TryNowBtn>
+
+    
         </TermsContainer>
     )
 }

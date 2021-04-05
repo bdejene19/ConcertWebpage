@@ -7,7 +7,7 @@ const UserBillingInfo = styled.div`
     display: grid;
     grid-template-columns: 40vw 40vw;
     grid-column-gap: 5em;
-    padding-bottom: 20em;
+    padding-bottom: 5em;
     align-items: center;
     justify-content: center;
     letter-spacing: 3px;
@@ -63,7 +63,7 @@ const UserBillingInfo = styled.div`
   
 
     form {
-        width: 100%;
+        width: 90%;
         grid-row: 2;
         input  {
             width: 100%;
@@ -74,6 +74,10 @@ const UserBillingInfo = styled.div`
             
         } 
 
+        select {
+            padding-left: 1em;
+            font-size: 16px;
+        }
         #country {
             width: 100%;
             height: 6vh;
@@ -114,7 +118,7 @@ export default function BillingSection() {
                     <input type='radio' name='plan-type' id='advanced' value='advanced'></input>
                     <label for='advanced' style={{color: '#ffc233'}}>ADVANCED</label>
                     <input type='radio' name='plan-type' id='pro' value='pro'></input>
-                    <label for='basic' style={{color: 'aqua'}}>PRO</label>      
+                    <label for='pro' style={{color: 'aqua'}}>PRO</label>      
                 </div>
             </div>
 

@@ -44,7 +44,6 @@ const UserBillingInfo = styled.div`
     }
   
     .plan-choices {
-        border: solid green;
         font-size: 24px;
         column-gap: 1em;
         & input::before {

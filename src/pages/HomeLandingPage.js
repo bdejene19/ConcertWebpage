@@ -11,25 +11,41 @@ import DownloadApp from '../components/homepage/DownloadApp';
 
 export const SectionWrapper = styled.section`
     width: 100vw;
-    height: 100vh;
+    height: 99vh;
     background-color: ${props => props.bgColor};
+    scroll-snap-align: start;
+`;
+
+const HomeContainer = styled.div`
+    scroll-snap-type: mandatory y;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+
+    position: absolute;
+
+    .scrollTo {
+        scroll-snap-align: start;
+    }
 `;
 
 
 export default function HomeLandingPage() {
     return (
-        <div>
+       
+        <HomeContainer>
             <SectionWrapper>
                 <SlideShow></SlideShow>
             </SectionWrapper>
 
-            <SectionWrapper bgColor='#ff4d4d'>
+            <SectionWrapper bgColor='#ff4d4d' className='scrollTo'>
                 <LandingPageHeader btnTextColor='#ff4d4d'></LandingPageHeader>
                 <SoundSectionHome></SoundSectionHome>
 
             </SectionWrapper>
             
-            <SectionWrapper bgColor='#ffc233'>
+            <SectionWrapper bgColor='#ffc233' className='scrollTo'>
                 <LandingPageHeader btnTextColor='#ffc233'></LandingPageHeader>
                 <Seats></Seats>
             </SectionWrapper>
@@ -46,6 +62,7 @@ export default function HomeLandingPage() {
 
             <DownloadApp></DownloadApp>
             <EmailFooter></EmailFooter>
-        </div>
+        </HomeContainer>
+
     )
 }

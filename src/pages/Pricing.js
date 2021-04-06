@@ -8,6 +8,7 @@ import LandingPerks from '../components/homepage/LandingPerks';
 export default function Pricing() {
     useEffect(() => {
         window.scrollTo(0,0);
+        clearInterval();
     })
     return (
         <div>
@@ -15,7 +16,7 @@ export default function Pricing() {
 
             <SectionWrapper bgColor='#ff4d4d' style={{height: 650}}>
                 <LandingPageHeader></LandingPageHeader>
-                <LandingPerks style={{height: 300}}></LandingPerks>
+                <LandingPerks style={{height: 300}} pColor='black'></LandingPerks>
             </SectionWrapper>
             <EmailFooter></EmailFooter>
         </div>

@@ -81,7 +81,7 @@ export const HorizontalBreak = styled.hr`
 export default function PricePlans() {
     return (
         <div style={{backgroundColor: 'black', display: 'grid', justifyItems: 'center'}}>
-            <LandingPageHeader></LandingPageHeader>
+            <LandingPageHeader showBtn={false}></LandingPageHeader>
             <PricingContainer>
 
                 <h1>PRICING</h1>
@@ -138,11 +138,11 @@ export default function PricePlans() {
                     
                         <div className='price-text'>
                             <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Very good.</p>
+                            <p>Very very good.</p>
                         </div>
                         <div className='price-text'>
                             <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Amazing.</p>
+                            <p>Even Amazing.</p>
                         </div>
                         
                         <div className='price-text'>
@@ -152,17 +152,17 @@ export default function PricePlans() {
                         
                         <div className='price-text'>
                             <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Love This.</p>
+                            <p>Love this More.</p>
                         </div>
 
                         <div className='price-text'>
                             <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>It's so good.</p>
+                            <p>It's so so good.</p>
                         </div>
 
                         <div className='price-text'>
                             <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Features.</p>
+                            <p>More Features.</p>
                         </div>
 
                         <br></br>
@@ -182,12 +182,11 @@ export default function PricePlans() {
                         
                         <div className='price-text'>
                             <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Very good.</p>
+                            <p>Very very good.</p>
                         </div>
-
                         <div className='price-text'>
                             <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Amazing.</p>
+                            <p>Even Amazing.</p>
                         </div>
                         
                         <div className='price-text'>
@@ -197,17 +196,17 @@ export default function PricePlans() {
                         
                         <div className='price-text'>
                             <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Love This.</p>
+                            <p>Love this More.</p>
                         </div>
 
                         <div className='price-text'>
                             <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>It's so good.</p>
+                            <p>It's so so good.</p>
                         </div>
 
                         <div className='price-text'>
                             <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Features.</p>
+                            <p>More Features.</p>
                         </div>
                         <br></br>
                         

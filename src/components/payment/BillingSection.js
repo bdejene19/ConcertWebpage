@@ -30,14 +30,11 @@ const UserBillingInfo = styled.div`
         padding-bottom: 1em;
     }
 
-
     .payment-1 {
         padding-bottom: 5em;
         grid-column: 1/3;
         grid-row: 1;
     }
-
-  
 
     label {
         font-weight: bold;
@@ -46,21 +43,20 @@ const UserBillingInfo = styled.div`
     .plan-choices {
         font-size: 24px;
         column-gap: 1em;
-        & input::before {
-            border: solid white 3px;
+
+        input[type="radio"]:checked {
+            background-color: solid green 1px;
+            
         }
 
         label {
             padding-right: 1em;
-            padding-left: 10px;
-            
+            padding-left: 10px;    
+            font-weight: 900; 
         }
 
         
     }
-
-    
-  
 
     form {
         width: 90%;
@@ -73,6 +69,9 @@ const UserBillingInfo = styled.div`
             border-radius: 0;
             
         } 
+        input:focus  {   
+            border-bottom: solid slateblue 5px;
+        }
 
         select {
             padding-left: 1em;
@@ -112,8 +111,8 @@ export default function BillingSection() {
             <div className='payment-1'>
                 <h1 className='payment-title'>PAYMENT</h1>
                 <h6>1. Select your plan</h6>
-                <div className='plan-choices'>
-                    <input type='radio' name='plan-type' id='basic'></input>
+                <div className='plan-choices'> 
+                    <input type='radio' name='plan-type' id='basic' className='radioBtn'></input>
                     <label for='basic' style={{color: '#ff4d4d'}}>BASIC</label>
                     <input type='radio' name='plan-type' id='advanced' value='advanced'></input>
                     <label for='advanced' style={{color: '#ffc233'}}>ADVANCED</label>
@@ -219,10 +218,7 @@ export default function BillingSection() {
                 </div>
 
             </div>
-           
-
             <TermsAgreement ></TermsAgreement>
-            
         </UserBillingInfo>
     )
 }

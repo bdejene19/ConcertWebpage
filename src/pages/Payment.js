@@ -5,7 +5,7 @@ import EmailFooter from '../components/homepage/EmailFooter'
 export default function Payment() {
     return (
         <div>
-            <LandingPageHeader headerColor='black'></LandingPageHeader>
+            <LandingPageHeader headerColor='black' showBtn={false}></LandingPageHeader>
             <BillingSection></BillingSection>
             <EmailFooter></EmailFooter>
 

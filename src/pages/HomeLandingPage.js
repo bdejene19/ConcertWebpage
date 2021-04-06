@@ -13,16 +13,15 @@ export const SectionWrapper = styled.section`
     width: 100vw;
     height: 99vh;
     background-color: ${props => props.bgColor};
-    scroll-snap-align: start;
 `;
 
 const HomeContainer = styled.div`
-    scroll-snap-type: mandatory y;
     height: 100vh;
     width: 100vw;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    position: absolute;
+    /* scroll-snap-type: y mandatory; */
+
+    /* position: absolute; */
 
     .scrollTo {
         scroll-snap-align: start;
@@ -32,7 +31,7 @@ const HomeContainer = styled.div`
 
 export default function HomeLandingPage() {
     return (
-       
+        <div>
         <HomeContainer>
             <SectionWrapper>
                 <SlideShow></SlideShow>
@@ -58,10 +57,13 @@ export default function HomeLandingPage() {
                 <LandingPageHeader></LandingPageHeader>
                 <Reviews></Reviews>
             </SectionWrapper>
-
-            <DownloadApp className='scrollTo'></DownloadApp>
+            <DownloadApp></DownloadApp>
             <EmailFooter></EmailFooter>
         </HomeContainer>
+       
 
+            
+            
+        </div>
     )
 }

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import LandingPageHeader from './LandingPageHeader';
+import {Link} from 'react-router-dom';
 
 const SlideShowWrapper = styled.article`
     width: 100%;
@@ -45,7 +46,7 @@ const SlideShowWrapper = styled.article`
         width: 15vw;
         height: 7vh;
         background-color: white;
-        background: linear-gradient(90deg, aqua 0%, blue 49%, red 80%, yellow 100%);
+        background: linear-gradient(90deg, aqua 0%, blue 49%, red 60%, yellow 100%);
         color: white;
         justify-self: right;
         border-radius: 25px 25px ;
@@ -75,13 +76,16 @@ export const TryNowBtn = styled.button`
         width: 15vw;
         height: 7vh;
         background-color: white;
-        background: linear-gradient(90deg, aqua 0%, blue 49%, red 80%, yellow 100%);
+        background: linear-gradient(90deg, aqua 0%, blue 30%, red 70%, yellow 100%);
         color: white;
         justify-self: right;
         border-radius: 25px 25px ;
         font-size: 18px;
         border: 1px white;
-        cursor: pointer;`;
+        cursor: pointer;
+        
+        
+`;
 
 
 
@@ -94,61 +98,58 @@ export default function SlideShow() {
         document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[0]})`;
         document.getElementById(count.toString()).style.backgroundColor = '#bbb';
 
-        // setInterval(() => {
-        //     count++;
-        //     if (count === backgroundImages.length) {
-        //         // document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
-        //         count = 0;      
-        //     } 
-        //     document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
-        //     document.getElementById(`${count}`).style.backgroundColor = '#bbb';
-        //     document.getElementById('slide-wrapper').style.transition = "0.5s linear";
-        // }, 5000);
-        
+        setSlideShowBg();
     })
+    
+    const setSlideShowBg = () => {
+        setInterval(() => {
+            count++;
+            if (count === backgroundImages.length) {
+                // document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
+                count = 0;      
+            } 
+            document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
+            document.getElementById(`${count}`).style.backgroundColor = '#bbb';
+            document.getElementById('slide-wrapper').style.transition = "0.5s linear";
+    
+            if (count - 1 > 0) {
+                document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
+    
+            } 
+            
+            if (count - 1 === 0) {
+                document.getElementById(`0`).style.backgroundColor = 'transparent';
+    
+            } 
+    
+            if (count - 1 < 0) {
+                document.getElementById(`${backgroundImages.length - 1}`).style.backgroundColor = 'transparent';
+    
+            }
+        }, 5000);
 
-    setInterval(() => {
-        count++;
-        if (count === backgroundImages.length) {
-            // document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
-            count = 0;      
-        } 
-        document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
-        document.getElementById(`${count}`).style.backgroundColor = '#bbb';
-        document.getElementById('slide-wrapper').style.transition = "0.5s linear";
-
-        if (count - 1 > 0) {
-            document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
-
-        } 
-        
-        if (count - 1 === 0) {
-            document.getElementById(`0`).style.backgroundColor = 'transparent';
-
-        } 
-
-        if (count - 1 < 0) {
-            document.getElementById(`${backgroundImages.length - 1}`).style.backgroundColor = 'transparent';
-
-        }
-    }, 5000);
+    }
+    
 
     const chooseBgPhoto = (photoIndex) => {
-        document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[photoIndex]})`;
+        document.getElementById(`${count}`).style.backgroundColor = 'transparent';
+
+        count = photoIndex;
+        document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
         document.getElementById('slide-wrapper').style.transition = "0.5s linear";  
-        
         document.getElementById(`${photoIndex}`).style.backgroundColor = '#bbb'
     }
     return (
         <SlideShowWrapper id='slide-wrapper'>
-            <LandingPageHeader></LandingPageHeader>
+            <LandingPageHeader showBtn={false}></LandingPageHeader>
 
             <div id='slideShow'>
                 <div className='slideShowText'>
                     <h1>INTERACTIVE CONCERT EXPERIENCE</h1>
                     <p>Experience your favourite artists like never before and from the comfort of your own home.</p>
-
-                    <TryNowBtn>TRY IT NOW</TryNowBtn>
+                    <Link to='/pricing'>
+                        <TryNowBtn>TRY IT NOW</TryNowBtn>
+                    </Link>
                 </div>
 
                 <div className='client-chooseBg'>

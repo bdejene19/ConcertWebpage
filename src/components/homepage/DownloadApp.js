@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import LandingPageHeader from './LandingPageHeader';
 import { TryNowBtn } from './SlideShow';
+import { Link } from 'react-router-dom';
 
 
 const DownloadAppText = styled.article`
@@ -34,7 +35,7 @@ export default function DownloadApp() {
     return (
         <DownloadAppText>
             <div id='download-banner'>
-                <LandingPageHeader ></LandingPageHeader>
+                <LandingPageHeader showBtn={false}></LandingPageHeader>
 
             </div>
             <div className='downloadText'>
@@ -42,7 +43,9 @@ export default function DownloadApp() {
                 <p style={{textAlign: 'left'}}>Purchase and download the app.</p>
             </div>
             <div style={{textAlign: 'center'}}>
-                <TryNowBtn>TRY IT NOW</TryNowBtn>
+                <Link to='/pricing'>
+                    <TryNowBtn style={{width: '20vw', height: '10vh', borderRadius: '50px 50px'}}>TRY IT NOW</TryNowBtn>
+                </Link>
             </div>
         </DownloadAppText>
     )

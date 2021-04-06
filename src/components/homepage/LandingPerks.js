@@ -21,6 +21,7 @@ export const PerksGrid = styled.article`
     p {
         font-size: 24px;
         width: 95%;
+        color: ${props => props.pColor};
     }
 `;
 
@@ -49,7 +50,7 @@ export const SubHeader = styled.h3`
 
 export default function LandingPerks(props) {
     return (
-        <PerksContainer>
+        <PerksContainer id='perks'>
 
             <PerksGrid key='perks'>
                 <h1 className='perksTitle' style={{color: 'white'}}>PERKS</h1>
@@ -58,17 +59,17 @@ export default function LandingPerks(props) {
                     <HorizontalBreak borderColor={props.titleOneColor} style={{width: 65}}></HorizontalBreak>
                     <SubHeader subHeadColor={props.titleOneColor}>Subscription<br></br>Payment <br></br>Model</SubHeader>
                     {/* <h3 subHeadColor='brown'>Subscription<br></br>Payment <br></br>Model</h3> */}
-                    <p>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
+                    <p style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
                 </div>
                 <div>
                     <HorizontalBreak borderColor={props.titleTwoColor} style={{width: 65}}></HorizontalBreak>
                     <SubHeader subHeadColor={props.titleTwoColor}>No Fee<br></br>Cancelation<br></br>Policy</SubHeader>
-                    <p>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
+                    <p style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
                 </div>
                 <div>
                     <HorizontalBreak borderColor={props.titleThreeColor} style={{width: 65}}></HorizontalBreak>
                     <SubHeader subHeadColor={props.titleThreeColor}>Subscription<br></br>Payment <br></br>Model</SubHeader>
-                    <p>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
+                    <p style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
                 </div>
             </PerksGrid>
 

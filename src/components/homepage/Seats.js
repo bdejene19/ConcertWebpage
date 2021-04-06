@@ -13,16 +13,15 @@ const SeatsSection = styled(SoundContainer)`
     }
 
     h1 {
-        font-size: 60px;
+        font-size: 56px;
         width: fit-content;
         letter-spacing: 3px;
     }
 
     p {
-        font-size: 48px;
+        font-size: 44px;
         letter-spacing: 3px;
-        transform-origin: 0 0;
-       
+        width: 90%;       
         color: black;
         padding-top: 0.5em;
         padding-bottom: 1em;

@@ -13,7 +13,7 @@ export const SoundContainer = styled.article`
     
     }
     h1 {
-        font-size: 60px;
+        font-size: 56px;
         transform-origin: 0 0;
         width: fit-content;
         transform: scaleX(1.25);
@@ -23,7 +23,7 @@ export const SoundContainer = styled.article`
     }
 
     p {
-        font-size: 47px;
+        font-size: 44px;
         letter-spacing: 3px;
         transform-origin: 0 0;
         color: black;
@@ -41,13 +41,13 @@ export const SoundContainer = styled.article`
 `;
 
 export const SeeDemo = styled.button`
-    width: 22vw;
+    width: 18vw;
     height: 9vh;
     border-radius: 40px 40px;
     background-color: white;
     border: solid white;
     color: #ff4d4d;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 900;
     cursor: pointer;
 `;
@@ -63,7 +63,6 @@ export default function SoundSectionHome() {
 
             <div className='sound-photos'>
                 <img src='speaker2.png' alt='stereo'></img>
-
             </div>
         </SoundContainer>
     )

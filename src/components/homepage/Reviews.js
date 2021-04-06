@@ -26,7 +26,7 @@ const ReviewContainer = styled.article`
 
         img {
             width: 25vw;
-            transform: rotate(90deg);
+            transform: rotate(270deg);
         }
 
     }

@@ -35,7 +35,7 @@ export default function DownloadApp() {
     return (
         <DownloadAppText>
             <div id='download-banner'>
-                <LandingPageHeader showBtn={false}></LandingPageHeader>
+                <LandingPageHeader showBtn={false} subMenuHeader='landing6'></LandingPageHeader>
 
             </div>
             <div className='downloadText'>

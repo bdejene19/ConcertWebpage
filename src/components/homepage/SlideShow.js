@@ -141,7 +141,7 @@ export default function SlideShow() {
     }
     return (
         <SlideShowWrapper id='slide-wrapper'>
-            <LandingPageHeader showBtn={false}></LandingPageHeader>
+            <LandingPageHeader showBtn={false} subMenuHeader='landing1'></LandingPageHeader>
 
             <div id='slideShow'>
                 <div className='slideShowText'>

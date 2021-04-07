@@ -30,6 +30,7 @@ const HomeContainer = styled.div`
 
 
 export default function HomeLandingPage() {
+    
     return (
         <div>
         <HomeContainer>
@@ -38,23 +39,23 @@ export default function HomeLandingPage() {
             </SectionWrapper>
 
             <SectionWrapper bgColor='#ff4d4d' className='scrollTo'>
-                <LandingPageHeader btnTextColor='#ff4d4d'></LandingPageHeader>
+                <LandingPageHeader btnTextColor='#ff4d4d' parentHoverColor='blue' subMenuHeader='landing2'></LandingPageHeader>
                 <SoundSectionHome></SoundSectionHome>
 
             </SectionWrapper>
             
             <SectionWrapper bgColor='#ffc233' className='scrollTo'>
-                <LandingPageHeader btnTextColor='#ffc233'></LandingPageHeader>
+                <LandingPageHeader btnTextColor='#ffc233' subMenuHeader='landing3'></LandingPageHeader>
                 <Seats></Seats>
             </SectionWrapper>
 
             <SectionWrapper bgColor='black'>
-                <LandingPageHeader></LandingPageHeader>
+                <LandingPageHeader subMenuHeader='landing4'></LandingPageHeader>
                 <LandingPerks titleOneColor='#ff4d4d' titleTwoColor='aqua' titleThreeColor='#ffc233'></LandingPerks>
             </SectionWrapper>
 
             <SectionWrapper bgColor='aqua'>
-                <LandingPageHeader></LandingPageHeader>
+                <LandingPageHeader subMenuHeader='landing5'></LandingPageHeader>
                 <Reviews></Reviews>
             </SectionWrapper>
             <DownloadApp></DownloadApp>

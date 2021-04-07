@@ -15,7 +15,7 @@ export default function Pricing() {
             <PricePlans></PricePlans>
 
             <SectionWrapper bgColor='#ff4d4d' style={{height: 650}}>
-                <LandingPageHeader></LandingPageHeader>
+                <LandingPageHeader subMenuHeader='pricing1'></LandingPageHeader>
                 <LandingPerks style={{height: 300}} pColor='black'></LandingPerks>
             </SectionWrapper>
             <EmailFooter></EmailFooter>

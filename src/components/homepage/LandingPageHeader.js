@@ -30,13 +30,10 @@ const SectionHeader = styled.header`
         text-align: right;
         outline: none;
         background-color: inherit;
-
         button:hover {
-            
-            transition: 1s linear;
             background: linear-gradient(90deg, aqua 0%, blue 30%, red 70%, yellow 100%);
-            /* opacity: 0; */
             color: white;
+
 
         }
     }
@@ -51,11 +48,11 @@ const HeaderContent = styled.div`
     .hamburgerIcon{
         font-size: 36px;
         cursor: pointer;
-        z-index: 1;
+        z-index: 3;
     }
 
     .menu {
-        position: fixed;
+        position: absolute;
         visibility: hidden;
         height: 0vh;
         width: 0vw;
@@ -90,55 +87,72 @@ const HeaderContent = styled.div`
 `;
 
 
+export const MenuItemContent = styled.h1`
+    font-size: 32px;
+    padding-bottom: 0.5em;
+    width: max-content;
+    font-weight: 500;
+
+    color: white;
+
+    &:hover {
+        color: ${props => props.hoverColor}
+    }
+`;
+
 
 
 export default function LandingPageHeader(props) {
     const [isMenuOpen, setMenuOpen] = useState(false);
 
-    const openMenu = () => {
+    const openMenu = (targetElement) => {
 
-
+        
         if (isMenuOpen === false) {
-            document.getElementById('menu').style.cssText = `
+            document.getElementById(`${targetElement}`).style.cssText = `
                 transition: 1s linear;
-                width: 30vw; 
+                width: 60%; 
                 height: 40vh;
                 border-radius: 0 45% 50% 50%;
                 visibility: visible;
+                z-index: 2;
             `;
-        } else {
-            document.getElementById('menu').style.cssText = `
+        }   
+         else {
+            document.getElementById(`${targetElement}`).style.cssText = `
                 transition: 1s linear;
-                width: 0vw; 
+                width: 0; 
                 height: 0vh;
                 visibility: hidden;
-                border-radius: 0 45% 50% 50%;                
+                border-radius: 0 50% 50% 50%;                
             `;        
         }
-        setMenuOpen(!isMenuOpen);
-        
+        setMenuOpen(!isMenuOpen);      
     }
     return (
         <SectionHeader>
-            <HeaderContent headerColor={props.headerColor}>
-                <MenuIcon fontSize='large' className='hamburgerIcon' id='menu-icon' onClick={openMenu}/>
-                <h2>EXP|CON</h2>
+            <div style={{position: 'relative'}}>
+                <HeaderContent headerColor={props.headerColor}>
+                    <MenuIcon fontSize='large' className='hamburgerIcon'  onClick={() => openMenu(props.subMenuHeader)}/>
+                    <h2>EXP|CON</h2>
 
-                <span className='menu' id='menu'>
-                    <Link to='/' className='menuItem'>
-                        <h1 hoverColor='blue'>WHAT IS IT?</h1>       
-                    </Link>
-                    
-                    <Link to='/#perks' className='menuItem'>
-                        <h1>PERKS</h1>
-                    </Link>
-                    
-                    <Link to='/pricing' className='menuItem'>
-                        <h1>PRICING</h1>
-                    </Link>
-                </span>
+                    <span className='menu' id={props.subMenuHeader}>
+                        <Link to='/' className='menuItem'>
+                            <MenuItemContent hoverColor='blue'>WHAT IS IT?</MenuItemContent>
+                        </Link>
+                        
+                        <Link to='/#perks' className='menuItem'>
+                            <MenuItemContent hoverColor={props.parentHoverColor}>PERKS</MenuItemContent>
+                        </Link>
+                        
+                        <Link to='/pricing' className='menuItem'>
+                            <MenuItemContent hoverColor={props.parentHoverColor}>PRICING</MenuItemContent>
+                        </Link>
+                    </span>
 
-            </HeaderContent>
+                </HeaderContent>
+            </div>
+
 
             {props.showBtn === false ? null : 
                 <Link to='/pricing' className='pricing-link'>

@@ -39,18 +39,18 @@ export default function HomeLandingPage() {
             </SectionWrapper>
 
             <SectionWrapper bgColor='#ff4d4d' className='scrollTo'>
-                <LandingPageHeader btnTextColor='#ff4d4d' parentHoverColor='blue' subMenuHeader='landing2'></LandingPageHeader>
+                <LandingPageHeader btnTextColor='#ff4d4d' subMenuHeader='landing2' contentColor='#ff4d4d'></LandingPageHeader>
                 <SoundSectionHome></SoundSectionHome>
 
             </SectionWrapper>
             
             <SectionWrapper bgColor='#ffc233' className='scrollTo'>
-                <LandingPageHeader btnTextColor='#ffc233' subMenuHeader='landing3'></LandingPageHeader>
+                <LandingPageHeader btnTextColor='#ffc233' subMenuHeader='landing3' contentColor='#ffc233'></LandingPageHeader>
                 <Seats></Seats>
             </SectionWrapper>
 
             <SectionWrapper bgColor='black'>
-                <LandingPageHeader subMenuHeader='landing4'></LandingPageHeader>
+                <LandingPageHeader subMenuHeader='landing4' bgMenuColor='aqua' contentColor='black'></LandingPageHeader>
                 <LandingPerks titleOneColor='#ff4d4d' titleTwoColor='aqua' titleThreeColor='#ffc233'></LandingPerks>
             </SectionWrapper>
 

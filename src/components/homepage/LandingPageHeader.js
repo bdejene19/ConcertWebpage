@@ -51,7 +51,7 @@ const HeaderContent = styled.div`
         z-index: 3;
     }
 
-    .menu {
+    /* .menu {
         position: absolute;
         visibility: hidden;
         height: 0vh;
@@ -60,7 +60,7 @@ const HeaderContent = styled.div`
         background-color: black;
         padding: 5.3em;
         overflow: hidden;
-        letter-spacing: 2px;
+        letter-spacing: 2px; */
         h1 {
             font-size: 32px;
             padding-bottom: 0.5em;
@@ -76,7 +76,7 @@ const HeaderContent = styled.div`
         .menuItem:hover {
             color: ${props => props.hoverColor}
         }
-    }
+    /* } */
     h2 {
         padding-top: 2px;
         font-size: 26px;
@@ -86,6 +86,18 @@ const HeaderContent = styled.div`
 
 `;
 
+
+const MenuContainer = styled.span`
+        position: absolute;
+        visibility: hidden;
+        height: 0vh;
+        width: 0vw;
+        margin: -2em;
+        background-color: ${props => props.menuBgColor || 'black'};
+        padding: 5.3em;
+        overflow: hidden;
+        letter-spacing: 2px;
+`;
 
 export const MenuItemContent = styled.h1`
     font-size: 32px;
@@ -113,10 +125,12 @@ export default function LandingPageHeader(props) {
                 transition: 1s linear;
                 width: 60%; 
                 height: 40vh;
-                border-radius: 0 45% 50% 50%;
+                border-radius: 0 40% 50% 50%;
                 visibility: visible;
                 z-index: 2;
             `;
+
+            document.querySelector('.hamburgerIcon').style.color = props.contentColor
         }   
          else {
             document.getElementById(`${targetElement}`).style.cssText = `
@@ -125,7 +139,10 @@ export default function LandingPageHeader(props) {
                 height: 0vh;
                 visibility: hidden;
                 border-radius: 0 50% 50% 50%;                
-            `;        
+            `;
+
+            document.querySelector('.hamburgerIcon').style.color = 'white'
+
         }
         setMenuOpen(!isMenuOpen);      
     }
@@ -136,19 +153,19 @@ export default function LandingPageHeader(props) {
                     <MenuIcon fontSize='large' className='hamburgerIcon'  onClick={() => openMenu(props.subMenuHeader)}/>
                     <h2>EXP|CON</h2>
 
-                    <span className='menu' id={props.subMenuHeader}>
+                    <MenuContainer menuBgColor={props.bgMenuColor} id={props.subMenuHeader}>
                         <Link to='/' className='menuItem'>
-                            <MenuItemContent hoverColor='blue'>WHAT IS IT?</MenuItemContent>
+                            <MenuItemContent hoverColor={props.contentColor}>WHAT IS IT?</MenuItemContent>
                         </Link>
                         
                         <Link to='/#perks' className='menuItem'>
-                            <MenuItemContent hoverColor={props.parentHoverColor}>PERKS</MenuItemContent>
+                            <MenuItemContent hoverColor={props.contentColor}>PERKS</MenuItemContent>
                         </Link>
                         
                         <Link to='/pricing' className='menuItem'>
-                            <MenuItemContent hoverColor={props.parentHoverColor}>PRICING</MenuItemContent>
+                            <MenuItemContent hoverColor={props.contentColor}>PRICING</MenuItemContent>
                         </Link>
-                    </span>
+                    </MenuContainer>
 
                 </HeaderContent>
             </div>

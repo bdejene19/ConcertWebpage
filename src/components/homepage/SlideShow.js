@@ -87,48 +87,59 @@ export const TryNowBtn = styled.button`
         
 `;
 
+let backgroundImages = ['concertLights.jpg', 'secondConcert.jpg', 'thirdConcert.jpg'];
+let count = 0;
+
+// const beginSlideShow = () => {}
+
+export const setSlideBg = setInterval(() => {
+    count++;
+    if (count === backgroundImages.length) {
+        // document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
+        count = 0;      
+    } 
+    document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
+    document.getElementById(`${count}`).style.backgroundColor = '#bbb';
+    document.getElementById('slide-wrapper').style.transition = "0.5s linear";
+
+    if (count - 1 > 0) {
+        document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
+
+    } 
+    
+    if (count - 1 === 0) {
+        document.getElementById(`0`).style.backgroundColor = 'transparent';
+
+    } 
+
+    if (count - 1 < 0) {
+        document.getElementById(`${backgroundImages.length - 1}`).style.backgroundColor = 'transparent';
+
+    }
+}, 5000);
+
 
 
 export default function SlideShow() {
 
-    let backgroundImages = ['concertLights.jpg', 'secondConcert.jpg', 'thirdConcert.jpg'];
-    let count = 0;
+ 
     
     useEffect(() => {
-        document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[0]})`;
+        document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
         document.getElementById(count.toString()).style.backgroundColor = '#bbb';
 
-        setSlideShowBg();
+        // setSlideBg;
+
+        return setSlideBg;
+
+
+        
     })
     
-    const setSlideShowBg = () => {
-        setInterval(() => {
-            count++;
-            if (count === backgroundImages.length) {
-                // document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
-                count = 0;      
-            } 
-            document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
-            document.getElementById(`${count}`).style.backgroundColor = '#bbb';
-            document.getElementById('slide-wrapper').style.transition = "0.5s linear";
     
-            if (count - 1 > 0) {
-                document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
-    
-            } 
-            
-            if (count - 1 === 0) {
-                document.getElementById(`0`).style.backgroundColor = 'transparent';
-    
-            } 
-    
-            if (count - 1 < 0) {
-                document.getElementById(`${backgroundImages.length - 1}`).style.backgroundColor = 'transparent';
-    
-            }
-        }, 5000);
 
-    }
+
+    // clearInterval(who)
     
 
     const chooseBgPhoto = (photoIndex) => {

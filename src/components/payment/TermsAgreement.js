@@ -22,7 +22,7 @@ const TermsContainer = styled.p`
 export default function TermsAgreement() {
     return (
         <TermsContainer>
-            <p>By continuing, I acknowledge that I've read and agree to the <a href='#'>Terms of Service</a> & <a href='#'>Privacy and Policy</a></p>.
+            <p>By continuing, I acknowledge that I've read and agree to the <a href='#'>Terms of Service</a> & <a href='#'>Privacy and Policy.</a></p>
             <TryNowBtn>DOWNLOAD</TryNowBtn>
 
     

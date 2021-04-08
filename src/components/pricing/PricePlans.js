@@ -49,7 +49,7 @@ const Prices = styled.div`
     }
 
     .plan-name {
-        font-size: 28px;
+        font-size: 40px;
     }
     .price-text {
         width: max-content;
@@ -74,14 +74,14 @@ const Prices = styled.div`
 
 export const HorizontalBreak = styled.hr`
     border: ${props => `${props.borderColor} 1px solid` || 'white'};
-    width: 30%;
+    width: ${props => props.largeWidth || '30%'};
 
 `;
 
 export default function PricePlans() {
     return (
         <div style={{backgroundColor: 'black', display: 'grid', justifyItems: 'center'}}>
-            <LandingPageHeader showBtn={false}></LandingPageHeader>
+            <LandingPageHeader showBtn={false} subMenuHeader='pricingPage1'  bgMenuColor='aqua' contentColor='black'></LandingPageHeader>
             <PricingContainer>
 
                 <h1>PRICING</h1>
@@ -90,7 +90,7 @@ export default function PricePlans() {
                 <Prices>  
                     <div>
                         <div style={{color: '#ff4d4d'}}>
-                            <SubHeader className='plan-name'>Basic<HorizontalBreak borderColor='#ff4d4d'></HorizontalBreak>Monthly</SubHeader>
+                            <SubHeader className='plan-name'>Basic<HorizontalBreak borderColor='#ff4d4d' largeWidth='70%'></HorizontalBreak>Monthly</SubHeader>
                             <h1><b>$9</b></h1>
                         </div>
                         <br></br>
@@ -131,7 +131,7 @@ export default function PricePlans() {
 
                     <div>
                         <div style={{color: '#ffc233'}}>
-                            <SubHeader className='plan-name'>Advanced<HorizontalBreak borderColor='#ffc223'></HorizontalBreak>Yearly</SubHeader>
+                            <SubHeader className='plan-name'>Advanced<HorizontalBreak borderColor='#ffc223' largeWidth='70%'></HorizontalBreak>Yearly</SubHeader>
                             <h1><b>$99</b></h1>
                         </div>
                         <br></br>
@@ -174,7 +174,7 @@ export default function PricePlans() {
 
                     <div>
                         <div style={{color: 'aqua'}}>
-                            <SubHeader className='plan-name'>Pro<HorizontalBreak borderColor='aqua'></HorizontalBreak>Yearly</SubHeader>
+                            <SubHeader className='plan-name'>Pro<HorizontalBreak borderColor='aqua' largeWidth='70%'></HorizontalBreak>Yearly</SubHeader>
                             <h1><b>$120</b></h1>
                         </div>
 

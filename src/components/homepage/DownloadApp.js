@@ -16,7 +16,7 @@ const DownloadAppText = styled.article`
         grid-column: 1/3;
     }
 
-    h1 {
+    .download-title {
         font-size: 48px; 
         color: #ff4d4d;
         white-space: 300px
@@ -24,6 +24,10 @@ const DownloadAppText = styled.article`
 
     .downloadText {
         margin-left: 5em;
+    }
+
+    .download-banner {
+        font-size: 12px;
     }
 
     p {
@@ -35,11 +39,11 @@ export default function DownloadApp() {
     return (
         <DownloadAppText>
             <div id='download-banner'>
-                <LandingPageHeader showBtn={false} subMenuHeader='landing6'></LandingPageHeader>
+                <LandingPageHeader showBtn={false} subMenuHeader='landing6' bgMenuColor='aqua' contentColor='black'></LandingPageHeader>
 
             </div>
             <div className='downloadText'>
-                <h1>GET EXP|CON NOW</h1>
+                <h1 className='download-title'>GET EXP|CON NOW</h1>
                 <p style={{textAlign: 'left'}}>Purchase and download the app.</p>
             </div>
             <div style={{textAlign: 'center'}}>

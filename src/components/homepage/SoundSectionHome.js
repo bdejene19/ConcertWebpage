@@ -38,6 +38,8 @@ export const SoundContainer = styled.article`
             width: 40vw;
         }
     }
+
+   
 `;
 
 export const SeeDemo = styled.button`

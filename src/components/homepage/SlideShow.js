@@ -116,30 +116,43 @@ export const setSlideBg = setInterval(() => {
         document.getElementById(`${backgroundImages.length - 1}`).style.backgroundColor = 'transparent';
 
     }
-}, 5000);
-
+}, 10000);
 
 
 export default function SlideShow() {
 
- 
     
     useEffect(() => {
         document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
         document.getElementById(count.toString()).style.backgroundColor = '#bbb';
-
-        // setSlideBg;
-
-        return setSlideBg;
-
-
         
+        // want to put my set interval here;
+        // const setSlideBg = setInterval(() => {
+        //     count++;
+        //     if (count === backgroundImages.length) {
+        //         count = 0;      
+        //     } 
+        //     document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
+        //     document.getElementById(`${count}`).style.backgroundColor = '#bbb';
+        //     document.getElementById('slide-wrapper').style.transition = "0.5s linear";
+        
+        //     if (count - 1 > 0) {
+        //         document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
+        
+        //     } 
+            
+        //     if (count - 1 === 0) {
+        //         document.getElementById(`0`).style.backgroundColor = 'transparent';
+        
+        //     } 
+        
+        //     if (count - 1 < 0) {
+        //         document.getElementById(`${backgroundImages.length - 1}`).style.backgroundColor = 'transparent';
+        
+        //     }
+        // }, 3000);      
     })
-    
-    
 
-
-    // clearInterval(who)
     
 
     const chooseBgPhoto = (photoIndex) => {

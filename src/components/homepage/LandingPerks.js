@@ -50,7 +50,7 @@ export const SubHeader = styled.h3`
 
 export default function LandingPerks(props) {
     return (
-        <PerksContainer id='perks'>
+        <PerksContainer>
 
             <PerksGrid key='perks'>
                 <h1 className='perksTitle' style={{color: 'white'}}>PERKS</h1>

@@ -49,13 +49,13 @@ export default function HomeLandingPage() {
                 <Seats></Seats>
             </SectionWrapper>
 
-            <SectionWrapper bgColor='black'>
+            <SectionWrapper bgColor='black' id='perks'>
                 <LandingPageHeader subMenuHeader='landing4' bgMenuColor='aqua' contentColor='black'></LandingPageHeader>
                 <LandingPerks titleOneColor='#ff4d4d' titleTwoColor='aqua' titleThreeColor='#ffc233'></LandingPerks>
             </SectionWrapper>
 
             <SectionWrapper bgColor='aqua'>
-                <LandingPageHeader subMenuHeader='landing5'></LandingPageHeader>
+                <LandingPageHeader subMenuHeader='landing5' contentColor='aqua'></LandingPageHeader>
                 <Reviews></Reviews>
             </SectionWrapper>
             <DownloadApp></DownloadApp>

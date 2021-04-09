@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import {Link} from 'react-router-dom';
-import { setSlideBg } from './SlideShow';
 
 
 const SectionHeader = styled.header`
@@ -76,8 +75,8 @@ const MenuContainer = styled.span`
         width: 0vw;
         margin: -2em;
         background-color: ${props => props.menuBgColor || 'black'};
-        padding: 5.3em;
-        padding-left: 2em;
+        /* padding-top: 5em; */
+        padding-left: 2.2em;
         overflow: hidden;
         letter-spacing: 2px;
 
@@ -122,19 +121,17 @@ export default function LandingPageHeader(props) {
         
         if (isMenuOpen === false) {
             document.getElementById(`${targetElement}`).style.cssText = `
-                transition: 1s linear;
-                width: 50%; 
-                height: 40vh;
-                border-radius: 0 40% 50% 40%;
+                transition: 0.5s linear;
+                width: 45%; 
+                height: 42vh;
+                border-radius: 0 50% 50% 40%;
                 visibility: visible;
                 z-index: 2;
             `;
-
-            // document.querySelector('.hamburgerIcon').style.color = props.contentColor
         }   
          else {
             document.getElementById(`${targetElement}`).style.cssText = `
-                transition: 1s linear;
+                transition: 0.5s linear;
                 width: 0; 
                 height: 0vh;
                 visibility: hidden;
@@ -145,6 +142,7 @@ export default function LandingPageHeader(props) {
         }
         setMenuOpen(!isMenuOpen);      
     }
+
     return (
         <SectionHeader>
             <div style={{position: 'relative'}}>
@@ -157,16 +155,22 @@ export default function LandingPageHeader(props) {
                     
 
                     <MenuContainer menuBgColor={props.bgMenuColor} id={props.subMenuHeader}>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
                         <Link to='/' className='menuItem'>
                             <MenuItemContent hoverColor={props.contentColor}>WHAT IS IT?</MenuItemContent>
                         </Link>
                         
-                        <Link to='/#perks' className='menuItem'>
+                        <a href='#perks' className='menuItem'>
                             <MenuItemContent hoverColor={props.contentColor}>PERKS</MenuItemContent>
-                        </Link>
+                        </a>
                         
                         <Link to='/pricing' className='menuItem'>
-                            <MenuItemContent hoverColor={props.contentColor} onClick={() => clearInterval(setSlideBg)}>PRICING</MenuItemContent>
+                            <MenuItemContent hoverColor={props.contentColor}>PRICING</MenuItemContent>
                         </Link>
                     </MenuContainer>
 

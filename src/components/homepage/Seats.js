@@ -72,7 +72,7 @@ const SeatsSection = styled(SoundContainer)`
             justify-self: right;
             border-radius: 50%;
             width: 25vw; 
-            height: 50vh;
+            height: 40vh;
             transform: translate(25%, -15%);
             content: '';
             background-color: black;

@@ -1,4 +1,19 @@
-# Getting Started with Create React App
+# EXP|CON Concert
+A multipage web application, built using React as frontend framework. Purpose of app is to show professionalism in execution of UX wireframes and digitally showcase the concert experience. App was built using primary frontend tools (HTML, CSS/Sass, JS), while React and styled components were implemented to help modularize code.
+
+
+## What the Project Taught Me
+- Implementing UX/UI designs into live code
+- Modularize and begin creating a code architecture
+- CSS PseudoElements
+
+## Where I can Improve
+- use Figma to develop custom SVGs for the user experience
+- develop backend/OAuth for actual ticket sales (or E-commerce in general)\
+- Create responsive design
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -4,12 +4,12 @@ import PricePlans from '../components/pricing/PricePlans'
 import {SectionWrapper} from '../pages/HomeLandingPage'
 import LandingPageHeader from '../components/homepage/LandingPageHeader';
 import LandingPerks from '../components/homepage/LandingPerks';
-import { setSlideBg } from '../components/homepage/SlideShow';
+// import { setSlideBg } from '../components/homepage/SlideShow';
 
 export default function Pricing() {
     useEffect(() => {
         window.scrollTo(0,0);
-        clearInterval(setSlideBg);
+        // clearInterval(setSlideBg);
     })
     return (
         <div>

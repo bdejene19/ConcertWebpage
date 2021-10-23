@@ -3,74 +3,6 @@ import styled from 'styled-components';
 import LandingPageHeader from './LandingPageHeader';
 import {Link} from 'react-router-dom';
 
-const SlideShowWrapper = styled.article`
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    color: white;
-    /* background-image: url(); */
-
-    .slide-img {
-        height: 100vh;
-    }
-
-    #slideShow {
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        text-align: center;
-        align-items: center;
-
-        .slideShowText {
-            grid-column: 1/3;
-            align-self: center;
-
-            h1 {
-                font-size: 64px;
-                letter-spacing: 5px;
-            }
-            p {
-                
-                padding-top: 1em;
-                padding-bottom: 1em;
-                letter-spacing: 3px;
-                width: 50%;
-                transform: translateX(50%);
-                font-size: 30px;
-                align-self: center;
-            }
-        } 
-    }
-    
-    .rainbowTryNow {
-        width: 15vw;
-        height: 7vh;
-        background-color: white;
-        background: linear-gradient(90deg, aqua 0%, blue 49%, red 60%, yellow 100%);
-        color: white;
-        justify-self: right;
-        border-radius: 25px 25px ;
-        font-size: 18px;
-        border: 1px white;
-        cursor: pointer;
-    }
-
-    .client-chooseBg {
-        grid-column: 1/3;
-        grid-row: 2;
-        .dot {
-            cursor: pointer;
-            height: 2vh;
-            width: 1vw;
-            margin: 0 0.5em;
-            border: solid 2px #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-    }
-   
-`;
 
 export const TryNowBtn = styled.button`
         width: 15vw;
@@ -124,33 +56,7 @@ export default function SlideShow() {
     
     useEffect(() => {
         document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
-        document.getElementById(count.toString()).style.backgroundColor = '#bbb';
-        
-        // want to put my set interval here;
-        // const setSlideBg = setInterval(() => {
-        //     count++;
-        //     if (count === backgroundImages.length) {
-        //         count = 0;      
-        //     } 
-        //     document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
-        //     document.getElementById(`${count}`).style.backgroundColor = '#bbb';
-        //     document.getElementById('slide-wrapper').style.transition = "0.5s linear";
-        
-        //     if (count - 1 > 0) {
-        //         document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
-        
-        //     } 
-            
-        //     if (count - 1 === 0) {
-        //         document.getElementById(`0`).style.backgroundColor = 'transparent';
-        
-        //     } 
-        
-        //     if (count - 1 < 0) {
-        //         document.getElementById(`${backgroundImages.length - 1}`).style.backgroundColor = 'transparent';
-        
-        //     }
-        // }, 3000);      
+        document.getElementById(count.toString()).style.backgroundColor = '#bbb';     
     })
 
     
@@ -168,8 +74,10 @@ export default function SlideShow() {
             <LandingPageHeader showBtn={false} subMenuHeader='landing1' contentColor='#ff4d4d'></LandingPageHeader>
 
             <div id='slideShow'>
+                
                 <div className='slideShowText'>
-                    <h1>INTERACTIVE CONCERT EXPERIENCE</h1>
+                <h1>INTERACTIVE CONCERT EXPERIENCE</h1>
+
                     <p>Experience your favourite artists like never before and from the comfort of your own home.</p>
                     <Link to='/pricing'>
                         <TryNowBtn>TRY IT NOW</TryNowBtn>
@@ -184,3 +92,133 @@ export default function SlideShow() {
         </SlideShowWrapper>            
     )
 }
+
+const SlideShowWrapper = styled.article`
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    color: white;
+    /* background-image: url(); */
+
+    .slide-img {
+        height: 100vh;
+    }
+
+    #slideShow {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        .slideShowText {
+            align-items: center;
+            justify-items: center;
+            h1 {
+                font-size: 4.5rem;
+                letter-spacing: 5px;
+            }
+            p {
+                text-align: center;
+                justify-content: center;
+                padding-top: 1em;
+                padding-bottom: 1em;
+                letter-spacing: 3px;
+                width: 75%;
+                transform: translateX(12.5%);
+                font-size: 48px;
+                align-self: center;
+            }
+        } 
+    }
+    
+    .rainbowTryNow {
+        width: 15vw;
+        height: 7vh;
+        background-color: white;
+        background: linear-gradient(90deg, aqua 0%, blue 49%, red 60%, yellow 100%);
+        color: white;
+        justify-self: right;
+        border-radius: 25px 25px ;
+        font-size: 18px;
+        border: 1px white;
+        cursor: pointer;
+    }
+
+    .client-chooseBg {
+        padding-top: 10em;
+
+        .dot {
+            cursor: pointer;
+            height: 2vh;
+            width: 1vw;
+            margin: 0 0.5em;
+            border: solid 2px #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+
+        }
+    }
+
+
+    @media screen and (max-width: 1024px) {
+        height: 100%;
+        align-items: center;
+
+        #slideShow {
+            .slideShowText {
+                h1 {
+                    font-size: 3rem;
+
+                }
+                p {
+                    transform: translateX(15%);
+                    font-size: 3rem;
+                }
+            }
+
+        }
+       
+    }
+
+    @media screen and (max-width: 768px) {
+        #slideShow {
+            .slideShowText {
+                h1 {
+                    font-size: 2.5rem;
+                }
+
+                p {
+                    font-size: 1.75rem;
+                    transform: translateX(17.5%);
+
+
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        #slideShow {
+            .slideShowText {
+                h1 {
+                    font-size: 1.75rem;
+                }
+
+                p {
+                    width: 100%;
+                    transform: translate(0%);
+                    font-size: 1.5rem;
+                }
+
+            }
+           
+        }
+    }
+
+
+   
+`;

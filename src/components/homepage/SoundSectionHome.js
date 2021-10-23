@@ -1,14 +1,30 @@
 import React from 'react'; 
 import styled from 'styled-components';
 
+export default function SoundSectionHome() {
+    return (
+        <SoundContainer>
+            <div className='sound-content'>
+                <h1>SUPERIOR SOUND</h1>
+                <p>Experience live versions of your favourite songs.</p>
+                <SeeDemo>SEE DEMO</SeeDemo>
+            </div>
+
+            <div className='sound-photos'>
+                <img src='speaker2.png' alt='stereo'></img>
+            </div>
+        </SoundContainer>
+    )
+}
+
+
 export const SoundContainer = styled.article`
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
+    display: flex;
+    flex-wrap: wrap;
     padding: 5em;
     color: white;
     .sound-content {
-        padding: 2em;
+        flex-basis: 65%;
         padding-left: 0;
     
     }
@@ -32,10 +48,30 @@ export const SoundContainer = styled.article`
     }
 
     .sound-photos {
-        transform: translate(10%, -20%);
+        /* transform: translate(10%, -20%); */
+        flex-basis: 35%;
 
         img {
-            width: 40vw;
+            width: 30vw;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        padding: 2.5em;
+        .sound-photos {
+            transform: translate(10%, 30%);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        /* padding: 0; */
+        .sound-content {
+            flex-grow: 1;
+            /* flex: 1 1 100%, */
+        }
+        .sound-photos {
+            display: none;
+            flex-basis: 0;
         }
     }
 
@@ -54,18 +90,3 @@ export const SeeDemo = styled.button`
     cursor: pointer;
 `;
 
-export default function SoundSectionHome() {
-    return (
-        <SoundContainer>
-            <div className='sound-content'>
-                <h1>SUPERIOR SOUND</h1>
-                <p>Experience live versions of your favourite songs.</p>
-                <SeeDemo>SEE DEMO</SeeDemo>
-            </div>
-
-            <div className='sound-photos'>
-                <img src='speaker2.png' alt='stereo'></img>
-            </div>
-        </SoundContainer>
-    )
-}

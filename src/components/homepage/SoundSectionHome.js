@@ -29,7 +29,6 @@ export const SoundContainer = styled.article`
     
     }
     h1 {
-        font-size: 56px;
         transform-origin: 0 0;
         width: fit-content;
         transform: scaleX(1.25);
@@ -39,7 +38,6 @@ export const SoundContainer = styled.article`
     }
 
     p {
-        font-size: 44px;
         letter-spacing: 3px;
         transform-origin: 0 0;
         color: black;
@@ -64,14 +62,22 @@ export const SoundContainer = styled.article`
     }
 
     @media screen and (max-width: 768px) {
-        /* padding: 0; */
         .sound-content {
             flex-grow: 1;
-            /* flex: 1 1 100%, */
         }
         .sound-photos {
-            display: none;
             flex-basis: 0;
+
+            img { 
+                height: 30vh; 
+                width: 50vw
+            }
+        }
+    }
+
+    @media screen and (max-width: 600) {
+        img {
+            display: none;
         }
     }
 
@@ -88,5 +94,9 @@ export const SeeDemo = styled.button`
     font-size: 22px;
     font-weight: 900;
     cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+        width: 50vw;
+    }
 `;
 

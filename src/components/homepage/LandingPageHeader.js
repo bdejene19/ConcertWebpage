@@ -37,6 +37,13 @@ const SectionHeader = styled.header`
 
         }
     }
+    
+    @media screen and (max-width: 768px) {
+        .tryNow-btn {
+            min-width: 15vw;
+            max-width: 35vw;
+        }
+    }
 `;
 
 const HeaderContent = styled.div`

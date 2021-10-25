@@ -3,54 +3,6 @@ import styled from 'styled-components';
 import LandingPageHeader from './LandingPageHeader';
 import {Link} from 'react-router-dom';
 
-
-export const TryNowBtn = styled.button`
-        width: 15vw;
-        height: 7vh;
-        background-color: white;
-        background: linear-gradient(90deg, aqua 0%, blue 30%, red 70%, yellow 100%);
-        color: white;
-        justify-self: right;
-        border-radius: 25px 25px ;
-        font-size: 18px;
-        border: 1px white;
-        cursor: pointer;
-        
-        
-`;
-
-let backgroundImages = ['concertLights.jpg', 'secondConcert.jpg', 'thirdConcert.jpg'];
-let count = 0;
-
-// const beginSlideShow = () => {}
-
-export const setSlideBg = setInterval(() => {
-    count++;
-    if (count === backgroundImages.length) {
-        // document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
-        count = 0;      
-    } 
-    document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
-    document.getElementById(`${count}`).style.backgroundColor = '#bbb';
-    document.getElementById('slide-wrapper').style.transition = "0.5s linear";
-
-    if (count - 1 > 0) {
-        document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
-
-    } 
-    
-    if (count - 1 === 0) {
-        document.getElementById(`0`).style.backgroundColor = 'transparent';
-
-    } 
-
-    if (count - 1 < 0) {
-        document.getElementById(`${backgroundImages.length - 1}`).style.backgroundColor = 'transparent';
-
-    }
-}, 10000);
-
-
 export default function SlideShow() {
 
     
@@ -93,6 +45,62 @@ export default function SlideShow() {
     )
 }
 
+
+
+export const TryNowBtn = styled.button`
+        width: 15vw;
+        height: 7vh;
+        background-color: white;
+        background: linear-gradient(90deg, aqua 0%, blue 30%, red 70%, yellow 100%);
+        color: white;
+        justify-self: right;
+        border-radius: 25px 25px ;
+        font-size: 18px;
+        border: 1px white;
+        cursor: pointer;
+
+        @media screen and (max-width: 1024px) {
+            width: 20vw;
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 30vw;
+        }
+        
+        
+`;
+
+let backgroundImages = ['concertLights.jpg', 'secondConcert.jpg', 'thirdConcert.jpg'];
+let count = 0;
+
+// const beginSlideShow = () => {}
+
+export const setSlideBg = setInterval(() => {
+    count++;
+    if (count === backgroundImages.length) {
+        // document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
+        count = 0;      
+    } 
+    document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
+    document.getElementById(`${count}`).style.backgroundColor = '#bbb';
+    document.getElementById('slide-wrapper').style.transition = "0.5s linear";
+
+    if (count - 1 > 0) {
+        document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
+
+    } 
+    
+    if (count - 1 === 0) {
+        document.getElementById(`0`).style.backgroundColor = 'transparent';
+
+    } 
+
+    if (count - 1 < 0) {
+        document.getElementById(`${backgroundImages.length - 1}`).style.backgroundColor = 'transparent';
+
+    }
+}, 10000);
+
 const SlideShowWrapper = styled.article`
     width: 100%;
     height: 100%;
@@ -117,7 +125,6 @@ const SlideShowWrapper = styled.article`
             align-items: center;
             justify-items: center;
             h1 {
-                font-size: 4.5rem;
                 letter-spacing: 5px;
             }
             p {
@@ -128,7 +135,6 @@ const SlideShowWrapper = styled.article`
                 letter-spacing: 3px;
                 width: 75%;
                 transform: translateX(12.5%);
-                font-size: 48px;
                 align-self: center;
             }
         } 
@@ -171,12 +177,10 @@ const SlideShowWrapper = styled.article`
         #slideShow {
             .slideShowText {
                 h1 {
-                    font-size: 3rem;
 
                 }
                 p {
                     transform: translateX(15%);
-                    font-size: 3rem;
                 }
             }
 
@@ -187,12 +191,8 @@ const SlideShowWrapper = styled.article`
     @media screen and (max-width: 768px) {
         #slideShow {
             .slideShowText {
-                h1 {
-                    font-size: 2.5rem;
-                }
-
+            
                 p {
-                    font-size: 1.75rem;
                     transform: translateX(17.5%);
 
 
@@ -204,14 +204,9 @@ const SlideShowWrapper = styled.article`
     @media screen and (max-width: 450px) {
         #slideShow {
             .slideShowText {
-                h1 {
-                    font-size: 1.75rem;
-                }
-
                 p {
                     width: 100%;
                     transform: translate(0%);
-                    font-size: 1.5rem;
                 }
 
             }

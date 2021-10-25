@@ -4,37 +4,6 @@ import LandingPageHeader from './LandingPageHeader';
 import { TryNowBtn } from './SlideShow';
 import { Link } from 'react-router-dom';
 
-
-const DownloadAppText = styled.article`
-    background-color: black;
-    color: white;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 90vh;
-    
-    #download-banner {
-        grid-column: 1/3;
-    }
-
-    .download-title {
-        font-size: 48px; 
-        color: #ff4d4d;
-        white-space: 300px
-    }
-
-    .downloadText {
-        margin-left: 5em;
-    }
-
-    .download-banner {
-        font-size: 12px;
-    }
-
-    p {
-        font-size: 32px;
-    }
-`;
-
 export default function DownloadApp() {
     return (
         <DownloadAppText>
@@ -48,9 +17,61 @@ export default function DownloadApp() {
             </div>
             <div style={{textAlign: 'center'}}>
                 <Link to='/pricing'>
-                    <TryNowBtn style={{width: '20vw', height: '10vh', borderRadius: '50px 50px'}}>TRY IT NOW</TryNowBtn>
+                    <TryNowBtn style={{ borderRadius: '50px 50px'}} id='download-tryNow'>TRY IT NOW</TryNowBtn>
                 </Link>
             </div>
         </DownloadAppText>
     )
 }
+
+const DownloadAppText = styled.article`
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    height: 90vh;
+    
+    #download-banner {
+        flex: 1 1 100%;
+        height: fit-content;
+    }
+
+    .download-title {
+        font-size: 48px; 
+        color: #ff4d4d;
+        white-space: 300px
+    }
+
+    div {
+        height: fit-content;
+        width: 100%;
+        flex: 1 1 25em;
+    }
+
+    .downloadText {
+        padding-left: 5em;
+
+    }
+
+    .download-banner {
+        font-size: 12px;
+    }
+
+    p {
+        font-size: 32px;
+    }
+
+    #download-tryNow {
+        width: '20vw'; 
+        height: '10vh',
+    }
+    @media screen and (max-width: 768px) {
+        .downloadText {
+            padding-left: 2.5em;
+        }
+
+    
+    }
+`;
+
+

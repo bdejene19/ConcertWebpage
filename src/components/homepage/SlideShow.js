@@ -56,7 +56,6 @@ export const TryNowBtn = styled.button`
         justify-self: right;
         border-radius: 25px 25px ;
         font-size: 18px;
-        border: 1px white;
         cursor: pointer;
 
         @media screen and (max-width: 1024px) {
@@ -64,7 +63,7 @@ export const TryNowBtn = styled.button`
         }
 
         @media screen and (max-width: 768px) {
-            width: 30vw;
+            width: 60vw;
         }
         
         

@@ -19,7 +19,7 @@ export default function Reviews() {
 
                     <h4>ARTIST</h4>
 
-                    <p>"Love it, it's the Best. I can't live without it!"</p>
+                    <h5>"Love it, it's the Best. I can't live without it!"</h5>
                 </div>
                 <div className='reviewContent-reviewsContainer'>
                     <StarRateIcon className='starIcon'></StarRateIcon>
@@ -30,7 +30,7 @@ export default function Reviews() {
 
                     <h4>PRODUCER</h4>
 
-                    <p>"Love it, it's the Best. I can't live without it!"</p>
+                    <h5>"Love it, it's the Best. I can't live without it!"</h5>
                 </div>
 
                 <div className='reviewContent-reviewsContainer'>
@@ -42,7 +42,7 @@ export default function Reviews() {
 
                     <h4>MUSIC FAN</h4>
 
-                <p>"Love it, it's the Best. I can't live without it!"</p>
+                <h5>"Love it, it's the Best. I can't live without it!"</h5>
                 </div>
             </div>
         </ReviewContainer>
@@ -53,22 +53,20 @@ const ReviewContainer = styled.article`
     display: flex;
     flex-wrap: wrap;
     color: white;
-    padding-left: 5em;
-    /* padding: 5em; */
-    border: solid black 3px;
+    padding-left: 3em;
+    padding-top: 7.5em;
     letter-spacing: 3px;
-    grid-gap: 3em;
 
     
     h2 {
         flex: 1 1 100%;
-        font-size: 60px;
+        font-size: 3rem;
         margin: 0;
         padding-bottom: 1.5em;
     }
 
     .reviewImgs {
-        flex: 1 1 25%;
+        flex: 1 1 10%;
         img {
             width: 25vw;
             transform: rotate(270deg);
@@ -77,7 +75,6 @@ const ReviewContainer = styled.article`
     }
     .reviewsContainer {
         flex: 1 1 50%;;
-        border: solid green 3px;
         flex-wrap: wrap;
         display: flex;
 
@@ -88,8 +85,7 @@ const ReviewContainer = styled.article`
 
     .reviewContent-reviewsContainer {
         flex: 1 1 15em;
-        border: solid pink 2px;
-        margin-top: -1.5em;
+        /* margin-top: -1.5em; */
         h4 {
             font-size: 32px;
             padding-top: 0.25em;
@@ -105,18 +101,38 @@ const ReviewContainer = styled.article`
 
    
 
-    p {
+    h5 {
         width: 100%;
         color: black;
+        font-weight: 400;
         font-size: 2rem;
+    }
+
+    @media screen and (max-width: 1200px) {
+        row-gap: 3em;
+        padding-top: 2.5em;
     }
 
     @media screen and (max-width: 768px) {
         .reviewImgs {
             display: none;
         }
+
+        h5 {
+            font-size: 1.5rem;
+        }
+     
     }
 
+    @media screen and (max-width: 600px) {
+        padding-left: 2em;
+        padding-top: 1em;
+
+
+        h2 {
+            padding-bottom: 1em;
+        }
+    }
 `;
 
 

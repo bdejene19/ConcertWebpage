@@ -15,21 +15,21 @@ export default function LandingPerks(props) {
                     <SubHeader subHeadColor={props.titleOneColor} className='smallScreen-subH'>Subscription Payment Model</SubHeader>
 
                     {/* <h3 subHeadColor='brown'>Subscription<br></br>Payment <br></br>Model</h3> */}
-                    <p style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
+                    <h4 style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</h4>
                 </div>
                 <div>
                     <HorizontalBreak borderColor={props.titleTwoColor} style={{width: 65}}></HorizontalBreak>
                     <SubHeader subHeadColor={props.titleTwoColor} className='lgScreen-subH'>No Fee<br></br>Cancelation<br></br>Policy</SubHeader>
                     <SubHeader subHeadColor={props.titleTwoColor} className='smallScreen-subH'>No Fee Cancelation Policy</SubHeader>
 
-                    <p style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
+                    <h4 style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</h4>
                 </div>
                 <div>
                     <HorizontalBreak borderColor={props.titleThreeColor} style={{width: 65}}></HorizontalBreak>
                     <SubHeader subHeadColor={props.titleThreeColor} className='lgScreen-subH'>Subscription<br></br>Payment <br></br>Model</SubHeader>
                     <SubHeader subHeadColor={props.titleThreeColor} className='smallScreen-subH'>Subscription Payment Model</SubHeader>
 
-                    <p style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
+                    <h4 style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</h4>
                 </div>
             </PerksGrid>
 
@@ -59,9 +59,10 @@ export const PerksGrid = styled.article`
         flex: 1 1 20em;
      }
 
-    p {
+    h4 {
         font-size: 2rem;
         width: 95%;
+        font-weight: 500;
         color: ${props => props.pColor};
     }
 
@@ -69,14 +70,14 @@ export const PerksGrid = styled.article`
     @media screen and (max-width: 1200px) {
         row-gap: 1em;
 
-        p {
+        h4 {
             font-size: 1.5rem;
         }
     }
 
     @media screen and (max-width: 768px) {
         row-gap: 2.5em;
-        p {
+        h4 {
             font-size: 1.2rem;
             width: 100%;
             padding: 0;
@@ -128,7 +129,6 @@ const PerksContainer = styled.div`
     }
     @media screen and (max-width: 450px) {
         padding-top: 0;
-        border: solid pink 3px;
         padding-right: 1.5em;
         
 
@@ -147,7 +147,6 @@ const PerksContainer = styled.div`
         .perksTitle {
             font-size: 2.75rem;
             padding-bottom: 0;
-            border: solid blue 3px;
         }
     }
     

@@ -3,6 +3,103 @@ import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import {Link} from 'react-router-dom';
 
+export default function LandingPageHeader(props) {
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+    const openMenu = (targetElement) => {
+        let openStyling = `  transition: 0.5s linear;
+        height: 42vh;
+        border-radius: 0 50% 50% 40%;
+        visibility: visible;
+        z-index: 2;`
+
+        let width = '';
+        let windowWidth = window.innerWidth;
+        if (isMenuOpen === false) {
+            if (windowWidth <= 1000 && windowWidth > 768) {
+                document.getElementById(`${targetElement}`).style.cssText = `
+               ${openStyling}
+               width: 45%; 
+
+            `;
+            } else if (windowWidth <= 768 && windowWidth > 450) {
+                document.getElementById(`${targetElement}`).style.cssText = `
+                ${openStyling}
+                width: 45vw;
+                height: 35vh; 
+ 
+             `; 
+
+            } else if (windowWidth <= 450) {
+                document.getElementById(`${targetElement}`).style.cssText = `
+                ${openStyling}
+                width: 80vw;
+                height: 40vh; 
+ 
+             `; 
+            } 
+           
+        }   
+         else {
+            document.getElementById(`${targetElement}`).style.cssText = `
+                transition: 0.5s linear;
+                width: 0; 
+                height: 0vh;
+                visibility: hidden;
+                border-radius: 0 50% 50% 50%;                
+            `;
+
+
+        }
+        setMenuOpen(!isMenuOpen);      
+    }
+
+    return (
+        <SectionHeader>
+            <div style={{position: 'relative'}}>
+                <HeaderContent headerColor={props.headerColor}>
+                    <div style={{alignItems: 'center', display: 'flex', gridGap: '1em'}}>
+                        <MenuIcon fontSize='large' className='hamburgerIcon'  onClick={() => openMenu(props.subMenuHeader)}/>
+                        <h2>EXP|CON</h2>
+
+                    </div>
+                    
+
+                    <MenuContainer menuBgColor={props.bgMenuColor} id={props.subMenuHeader}>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                        <Link to='/' className='menuItem'>
+                            <MenuItemContent hoverColor={props.contentColor}>WHAT IS IT?</MenuItemContent>
+                        </Link>
+                        
+                        <a href='#perks' className='menuItem'>
+                            <MenuItemContent hoverColor={props.contentColor}>PERKS</MenuItemContent>
+                        </a>
+                        
+                        <Link to='/pricing' className='menuItem'>
+                            <MenuItemContent hoverColor={props.contentColor}>PRICING</MenuItemContent>
+                        </Link>
+                    </MenuContainer>
+
+                </HeaderContent>
+            </div>
+
+
+            {props.showBtn === false ? null : 
+                <Link to='/pricing' className='pricing-link'>
+                    <button className="tryNow-btn" style={{color: `${props.btnTextColor}`}}><b>Try it now</b></button>     
+                </Link>
+            }
+            
+            
+        </SectionHeader>
+    )
+}
+
 
 const SectionHeader = styled.header`
     display: grid;
@@ -105,8 +202,8 @@ const MenuContainer = styled.span`
         }
 `;
 
-export const MenuItemContent = styled.h1`
-    font-size: 32px;
+export const MenuItemContent = styled.h5`
+    font-size: 2.25rem;
     padding-bottom: 0.5em;
     width: max-content;
     font-weight: 500;
@@ -117,81 +214,3 @@ export const MenuItemContent = styled.h1`
         color: ${props => props.hoverColor}
     }
 `;
-
-
-
-export default function LandingPageHeader(props) {
-    const [isMenuOpen, setMenuOpen] = useState(false);
-
-    const openMenu = (targetElement) => {
-
-        
-        if (isMenuOpen === false) {
-            document.getElementById(`${targetElement}`).style.cssText = `
-                transition: 0.5s linear;
-                width: 45%; 
-                height: 42vh;
-                border-radius: 0 50% 50% 40%;
-                visibility: visible;
-                z-index: 2;
-            `;
-        }   
-         else {
-            document.getElementById(`${targetElement}`).style.cssText = `
-                transition: 0.5s linear;
-                width: 0; 
-                height: 0vh;
-                visibility: hidden;
-                border-radius: 0 50% 50% 50%;                
-            `;
-
-
-        }
-        setMenuOpen(!isMenuOpen);      
-    }
-
-    return (
-        <SectionHeader>
-            <div style={{position: 'relative'}}>
-                <HeaderContent headerColor={props.headerColor}>
-                    <div style={{alignItems: 'center', display: 'flex', gridGap: '1em'}}>
-                        <MenuIcon fontSize='large' className='hamburgerIcon'  onClick={() => openMenu(props.subMenuHeader)}/>
-                        <h2>EXP|CON</h2>
-
-                    </div>
-                    
-
-                    <MenuContainer menuBgColor={props.bgMenuColor} id={props.subMenuHeader}>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-
-                        <Link to='/' className='menuItem'>
-                            <MenuItemContent hoverColor={props.contentColor}>WHAT IS IT?</MenuItemContent>
-                        </Link>
-                        
-                        <a href='#perks' className='menuItem'>
-                            <MenuItemContent hoverColor={props.contentColor}>PERKS</MenuItemContent>
-                        </a>
-                        
-                        <Link to='/pricing' className='menuItem'>
-                            <MenuItemContent hoverColor={props.contentColor}>PRICING</MenuItemContent>
-                        </Link>
-                    </MenuContainer>
-
-                </HeaderContent>
-            </div>
-
-
-            {props.showBtn === false ? null : 
-                <Link to='/pricing' className='pricing-link'>
-                    <button className="tryNow-btn" style={{color: `${props.btnTextColor}`}}><b>Try it now</b></button>     
-                </Link>
-            }
-            
-            
-        </SectionHeader>
-    )
-}

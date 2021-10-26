@@ -2,11 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import { TryNowBtn } from '../homepage/SlideShow';
 
+export default function TermsAgreement() {
+    return (
+        <TermsContainer>
+            <p>By continuing, I acknowledge that I've read and agree to the <a href='#'>Terms of Service</a> & <a href='#'>Privacy and Policy.</a></p>
+            <TryNowBtn>DOWNLOAD</TryNowBtn>
+        </TermsContainer>
+    )
+}
+
 const TermsContainer = styled.p`
     color: black;
     font-size: 18px;
     letter-spacing: 1px;
-    width: 80%;
+    width: 100%;
     padding-top: 3em;
 
     a {
@@ -19,13 +28,4 @@ const TermsContainer = styled.p`
         padding-bottom: 2em;
     }
 `;
-export default function TermsAgreement() {
-    return (
-        <TermsContainer>
-            <p>By continuing, I acknowledge that I've read and agree to the <a href='#'>Terms of Service</a> & <a href='#'>Privacy and Policy.</a></p>
-            <TryNowBtn>DOWNLOAD</TryNowBtn>
 
-    
-        </TermsContainer>
-    )
-}

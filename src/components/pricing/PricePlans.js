@@ -5,79 +5,6 @@ import LandingPageHeader from '../homepage/LandingPageHeader';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import {Link} from 'react-router-dom';
 
-const PricingContainer = styled.article`
-    display: grid;
-    color: white;
-    background-color: black;
-    align-items: center;
-    justify-content: center;
-    padding: 1em;
-    width: 75%;
-    padding-bottom: 10em;
-
-    h1 {
-        font-size: 48px;
-        font-weight: bold;
-    }  
-
-    .pricing-caption {
-        grid-column: 1/4;
-        padding-top: 1em;
-        font-size: 36px;
-    }
-    .music-point{
-        font-size: 16px;
-        align-items: center;
-        justify-self: center;
-    }
-`;
-
-
-const Prices = styled.div`
-    display: grid;
-    grid-column: 1/4;
-    color: white;
-    grid-template-columns: repeat(3, auto);
-  
-
-    h1 {
-        font-size: 64px;
-    }
-
-    p {
-        font-size: 32px;
-    }
-
-    .plan-name {
-        font-size: 40px;
-    }
-    .price-text {
-        width: max-content;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        column-gap: 0.25em;
-    }
-
-    .tryNow {
-        width: 60%;
-        color: white;
-        height: 6vh;
-        justify-self: right;
-        border-radius: 20px 20px ;
-        border: 1px white;
-        cursor: pointer;
-        outline: none;
-
-    }
-`;
-
-export const HorizontalBreak = styled.hr`
-    border: ${props => `${props.borderColor} 1px solid` || 'white'};
-    width: ${props => props.largeWidth || '30%'};
-
-`;
-
 export default function PricePlans() {
     return (
         <div style={{backgroundColor: 'black', display: 'grid', justifyItems: 'center'}}>
@@ -221,3 +148,110 @@ export default function PricePlans() {
         
     )
 }
+
+const PricingContainer = styled.article`
+    color: white;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    width: 75%;
+    padding-bottom: 10em;
+
+    h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }  
+
+    .pricing-caption {
+        padding-top: 1em;
+        font-size: 2.5rem;
+    }
+    .music-point{
+        font-size: 16px;
+        align-items: center;
+        justify-self: center;
+    }
+
+    @media screen and (max-width: 768px) {
+        row-gap: 3em;
+
+        .pricing-caption {
+            font-size: 1.75rem;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        h1 {
+            font-size: 2.5rem;
+        }
+        .pricing-caption {
+            font-size: 1.35rem;
+        }
+    }
+`;
+
+
+const Prices = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    row-gap: 3em;;
+  
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 1.75rem;
+    }
+
+    div {
+        flex: 1 1 15em;
+    }
+    .plan-name {
+        font-size: 2.75rem;
+    }
+    .price-text {
+        width: max-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 0.25em;
+    }
+
+    .tryNow {
+        width: 60%;
+        color: white;
+        height: 6vh;
+        justify-self: right;
+        border-radius: 20px 20px ;
+        border: 1px white;
+        cursor: pointer;
+        outline: none;
+
+    }
+
+    @media screen and (max-width: 768px) {
+        h1 {
+            font-size: 2.5rem;
+        }
+        p {
+            font-size: 1.35rem;
+        }
+
+        .plan-name {
+            font-size: 2rem;
+        }
+    }
+
+   
+`;
+
+export const HorizontalBreak = styled.hr`
+    border: ${props => `${props.borderColor} 1px solid` || 'white'};
+    width: ${props => props.largeWidth || '30%'};
+
+`;
+

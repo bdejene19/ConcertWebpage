@@ -74,31 +74,31 @@ let count = 0;
 
 // const beginSlideShow = () => {}
 
-export const setSlideBg = setInterval(() => {
-    count++;
-    if (count === backgroundImages.length) {
-        // document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
-        count = 0;      
-    } 
-    document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
-    document.getElementById(`${count}`).style.backgroundColor = '#bbb';
-    document.getElementById('slide-wrapper').style.transition = "0.5s linear";
+    // export const setSlideBg = setInterval(() => {
+    //     count++;
+    //     if (count === backgroundImages.length) {
+    //         // document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
+    //         count = 0;      
+    //     } 
+    //     document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
+    //     document.getElementById(`${count}`).style.backgroundColor = '#bbb';
+    //     document.getElementById('slide-wrapper').style.transition = "0.5s linear";
 
-    if (count - 1 > 0) {
-        document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
+    //     if (count - 1 > 0) {
+    //         document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
 
-    } 
-    
-    if (count - 1 === 0) {
-        document.getElementById(`0`).style.backgroundColor = 'transparent';
+    //     } 
+        
+    //     if (count - 1 === 0) {
+    //         document.getElementById(`0`).style.backgroundColor = 'transparent';
 
-    } 
+    //     } 
 
-    if (count - 1 < 0) {
-        document.getElementById(`${backgroundImages.length - 1}`).style.backgroundColor = 'transparent';
+    //     if (count - 1 < 0) {
+    //         document.getElementById(`${backgroundImages.length - 1}`).style.backgroundColor = 'transparent';
 
-    }
-}, 10000);
+    //     }
+    // }, 10000);
 
 const SlideShowWrapper = styled.article`
     width: 100%;

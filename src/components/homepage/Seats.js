@@ -133,10 +133,15 @@ const SeatsSection = styled(SoundContainer)`
         
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1024px) {
         padding-left: 0;
         h1 {
             font-size: 2.5rem;
+        }
+
+        .halfCircle-container {
+            margin-top: 0;
+            transform: translateY(28vh);
         }
 
       
@@ -154,8 +159,22 @@ const SeatsSection = styled(SoundContainer)`
             display: none;
         }
 
+        .halfCircle-container {
+            transform: translateY(20.5vh)
+;        }
+
         .seat-content {
             padding-left: 2.25em;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        .seat-content {
+            padding-left: 1.5em;
+        }
+        .halfCircle-container {
+            padding-top: 0; 
+            transform: translateY(9vh);
         }
     }
 `;

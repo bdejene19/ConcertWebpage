@@ -56,6 +56,7 @@ const ReviewContainer = styled.article`
     padding-left: 3em;
     padding-top: 7.5em;
     letter-spacing: 3px;
+    row-gap: 5em;
 
     
     h2 {
@@ -77,7 +78,7 @@ const ReviewContainer = styled.article`
         flex: 1 1 50%;;
         flex-wrap: wrap;
         display: flex;
-
+        row-gap: 3em;
         h2 {
             flex: 1 1 100%;
         }
@@ -87,7 +88,7 @@ const ReviewContainer = styled.article`
         flex: 1 1 15em;
         /* margin-top: -1.5em; */
         h4 {
-            font-size: 32px;
+            font-size: 2.5rem;
             padding-top: 0.25em;
             padding-bottom: 0.5em;
         }
@@ -95,7 +96,7 @@ const ReviewContainer = styled.article`
 
     .starIcon {
         color: black;
-        font-size: 34px;   
+        font-size: 2rem;   
         font-weight: 900; 
     }
 
@@ -105,7 +106,8 @@ const ReviewContainer = styled.article`
         width: 100%;
         color: black;
         font-weight: 400;
-        font-size: 2rem;
+        font-size: 1.8rem;
+        width: 80%;
     }
 
     @media screen and (max-width: 1200px) {
@@ -117,10 +119,18 @@ const ReviewContainer = styled.article`
         .reviewImgs {
             display: none;
         }
+        .reviewContent-reviewsContainer {
+            h4 {
+                font-size: 2rem;
+            }
 
-        h5 {
-            font-size: 1.5rem;
+            h5 {
+                font-size: 1.5rem;
+                width: 100%;
+            }
         }
+
+       
      
     }
 
@@ -131,6 +141,16 @@ const ReviewContainer = styled.article`
 
         h2 {
             padding-bottom: 1em;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        
+        .reviewContent-reviewsContainer {
+            h4 {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
         }
     }
 `;

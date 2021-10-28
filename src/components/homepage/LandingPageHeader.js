@@ -16,7 +16,7 @@ export default function LandingPageHeader(props) {
         let width = '';
         let windowWidth = window.innerWidth;
         if (isMenuOpen === false) {
-            if (windowWidth <= 1000 && windowWidth > 768) {
+            if (windowWidth >= 1000) {
                 document.getElementById(`${targetElement}`).style.cssText = `
                ${openStyling}
                width: 45%; 
@@ -141,22 +141,24 @@ const SectionHeader = styled.header`
             max-width: 35vw;
         }
     }
+
+    @media screen and (max-width: 450px) {
+        .tryNow-btn {
+            margin-left: 1.5em;
+            min-width: 25vw;
+        }
+    }
 `;
 
 const HeaderContent = styled.div`
-
-
-
     display: flex;
     color: ${props => props.headerColor || 'white' };
-    
 
     .hamburgerIcon{
-        font-size: 40px;
+        font-size: 2.75rem;
         cursor: pointer;
         justify-content: right;
         align-items: center;
-
         z-index: 3;
     }
 
@@ -164,7 +166,7 @@ const HeaderContent = styled.div`
     /* } */
     h2 {
         padding-top: 2px;
-        font-size: 36px;
+        font-size: 2.5rem;
         font-weight: 500;
         z-index: 100;
     }
@@ -212,5 +214,10 @@ export const MenuItemContent = styled.h5`
 
     &:hover {
         color: ${props => props.hoverColor}
+    }
+
+    @media screen and (max-width: 768px) {
+        font-size: 2rem
+
     }
 `;

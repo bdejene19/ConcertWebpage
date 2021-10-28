@@ -60,7 +60,7 @@ export const PerksGrid = styled.article`
      }
 
     h4 {
-        font-size: 2rem;
+        font-size: 1.75rem;
         width: 95%;
         font-weight: 500;
         color: ${props => props.pColor};
@@ -130,6 +130,7 @@ const PerksContainer = styled.div`
     @media screen and (max-width: 450px) {
         padding-top: 0;
         padding-right: 1.5em;
+        padding-left: 1.5em;;
         
 
         .smallScreen-subH {
@@ -145,7 +146,7 @@ const PerksContainer = styled.div`
             display: block;
         }
         .perksTitle {
-            font-size: 2.75rem;
+            font-size: 2rem;
             padding-bottom: 0;
         }
     }

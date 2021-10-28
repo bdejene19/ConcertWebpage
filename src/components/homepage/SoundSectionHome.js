@@ -75,10 +75,14 @@ export const SoundContainer = styled.article`
         }
     }
 
-    @media screen and (max-width: 600) {
+    @media screen and (max-width: 600px) {
         img {
             display: none;
         }
+    }
+
+    @media screen and (max-width: 450px) {
+        padding-left: 1.5em;
     }
 
    

@@ -3,45 +3,6 @@ import styled from 'styled-components';
 import EmailIcon from '@material-ui/icons/Email';
 import CopyrightIcon from '@material-ui/icons/Copyright';
 
-const ContactFooter = styled.footer`
-    display: grid;
-    height: 35vh;
-    grid-template-columns: repeat(3, 1fr);
-    background-color: slateblue;
-    color: white;
-    padding: 3em;
-
-    .email-info {
-        display: flex;
-        flex-direction: row;
-        grid-column: 1/3;
-        font-size: 18px;
-        align-items: center;
-        grid-gap: 0.5em;
-    }
-
-    .copyright-content {
-        grid-row: 2;
-        grid-column: 1/4;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-    }
-
-    h3 {
-        font-size: 26px;
-        font-weight: 300;
-    }
-
-    h6 {
-        font-size: 16px;
-        font-weight: 400;
-    }
-
-    p {
-        padding-left: 2.2vw
-    }
-`;
 
 export default function EmailFooter() {
     return (
@@ -52,9 +13,125 @@ export default function EmailFooter() {
             </div>
 
             <div className='copyright-content'>
-                <h3>EXP|CON</h3>
+                <h4>EXP|CON</h4>
                 <p>2019 <CopyrightIcon style={{fontSize: 16}}></CopyrightIcon> All rights reserved | Speer Technologies Incorporated</p>
             </div>
         </ContactFooter>
     )
 }
+
+const ContactFooter = styled.footer`
+    display: flex;
+    flex-wrap: wrap;
+    height: 35vh;
+    background-color: slateblue;
+    color: white;
+    padding: 3em;
+
+    .email-info {
+        flex: 1 1 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        grid-gap: 0.5em;
+
+        h6 {
+            font-size: 1.35rem;
+            font-weight: 400;
+        }
+    }
+
+    .copyright-content {
+        flex: 1 1 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        h4 {
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        p {
+            padding-left: 4vw;
+            font-size: 1.5rem;
+        }
+    }
+
+ 
+    @media screen and (max-width: 1024px) {
+
+        .email-info {
+            h6 {
+                font-size: 2rem;
+            }
+        }
+
+        .copyright-content {
+            h4 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 2rem;
+                padding-left: 2.45em;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .email-info {
+            h6 {
+                font-size: 1.75rem;
+            }
+        }
+
+        .copyright-content {
+            h4 {
+                font-size: 2.75rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+                padding-left: 2.35em;
+            }
+        }
+    }
+
+
+    @media screen and (max-width: 450px) {
+
+        padding-left: 0;
+        padding-right: 0;
+        .email-info {
+            padding-left: 1em;
+            h6 {
+                font-size: 1.25rem;
+            }
+        }
+
+        .copyright-content {
+            padding-right: 0;
+            h4 {
+                font-size: 2rem;
+                margin-left: -0.78em;
+            }
+
+            p {
+                text-align: center;
+                font-size: 0.85rem;
+                padding-left: 0;
+                padding-right: 0;
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    }
+
+
+
+  
+
+  
+`;
+

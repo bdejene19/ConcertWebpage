@@ -135,13 +135,13 @@ const UserBillingInfo = styled.div`
     padding-right: 10em;
     letter-spacing: 3px;
     h1 {
-        font-size: 48px;
+        font-size: 3rem;
         flex: 1 1 100%;
         letter-spacing: 5px;
     }
 
     h6 {
-        font-size: 30px;
+        font-size: 2rem;
         font-weight: 300;
         /* padding-bottom: 0.5em; */
         padding-bottom: 1em;
@@ -149,7 +149,6 @@ const UserBillingInfo = styled.div`
     }
 
     .payment-title {
-        grid-column: 1/3;
         padding-top: 1em;
         padding-bottom: 1em;
     }
@@ -228,24 +227,43 @@ const UserBillingInfo = styled.div`
         flex: 1 1 30em;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         padding-left: 2em;
         padding-right: 0;
-        row-gap: 2em;
 
         form {
             input {
-                height: 5vh;
+                height: 5vh
             }
         }
         
     }
 
+    @media screen and (max-width: 768px) {
+       
+        row-gap: 2em;
+
+      
+        
+    }
+
     @media screen and (max-width: 425px) {
         padding-left: 1em;
-        .plan-choices {
-            column-gap: 0;
 
+        h6 {
+            font-size: 1.5rem;
+        }
+
+        .payment-1 {
+            padding-bottom: 0;
+        }
+
+        .plan-choices {
+            padding-left: 0;
+            label {
+                font-size: 1.25rem;
+                padding-left: 7px;
+            }
         }
     }
 

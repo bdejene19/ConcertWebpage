@@ -13,7 +13,7 @@ export default function TermsAgreement() {
 
 const TermsContainer = styled.p`
     color: black;
-    font-size: 18px;
+    font-size: 1.25rem;
     letter-spacing: 1px;
     width: 100%;
     padding-top: 3em;
@@ -26,6 +26,23 @@ const TermsContainer = styled.p`
 
     p {
         padding-bottom: 2em;
+    }
+
+    @media screen and (max-width: 768px) {
+        padding-top: 0em;
+
+        p {
+            padding-bottom: 2.5em;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        font-size: 1rem;
+        p {
+            padding-bottom: 2.5em;
+            
+        }
+        
     }
 `;
 

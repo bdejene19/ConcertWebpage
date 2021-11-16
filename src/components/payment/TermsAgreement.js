@@ -11,7 +11,7 @@ export default function TermsAgreement() {
     )
 }
 
-const TermsContainer = styled.p`
+const TermsContainer = styled.div`
     color: black;
     font-size: 1.25rem;
     letter-spacing: 1px;

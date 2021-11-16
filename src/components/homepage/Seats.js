@@ -169,6 +169,7 @@ const SeatsSection = styled(SoundContainer)`
     }
 
     @media screen and (max-width: 450px) {
+        overflow-y: hidden;
         .seat-content {
             padding-left: 1.5em;
         }

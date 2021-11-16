@@ -1,51 +1,95 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import LandingPageHeader from './LandingPageHeader';
 import {Link} from 'react-router-dom';
+let loadedImgs = ['concertLights.jpg', 'secondConcert.jpg', 'thirdConcert.jpg'];
+let count = 0;
 
-export default function SlideShow() {
-
-    
+export default function SlideShow(props) {
+    let intervalRef = useRef();
+  
     useEffect(() => {
-        document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
-        document.getElementById(count.toString()).style.backgroundColor = '#bbb';     
-    })
+        let preLoadedImgs = []
+        for (var item in props.bgPhotos) {
+            const img = new Image();
+            img.src = props.bgPhotos[item];
+            preLoadedImgs.push(img.src);
+        }
+        document.getElementById('slide-wrapper').style.backgroundImage = `url(${loadedImgs[count]})`;
+        document.getElementById(count.toString()).style.backgroundColor = '#bbb';   
+        
+        let  startSlides = setInterval(() => {
+            runShow(preLoadedImgs);
+        }, 7000);
+        
+        return () => clearInterval(startSlides);
 
-    
-
-    const chooseBgPhoto = (photoIndex) => {
-        document.getElementById(`${count}`).style.backgroundColor = 'transparent';
-
-        count = photoIndex;
-        document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
-        document.getElementById('slide-wrapper').style.transition = "0.5s linear";  
-        document.getElementById(`${photoIndex}`).style.backgroundColor = '#bbb'
-    }
+    },[])
     return (
-        <SlideShowWrapper id='slide-wrapper'>
-            <LandingPageHeader showBtn={false} subMenuHeader='landing1' contentColor='#ff4d4d'></LandingPageHeader>
+        <Suspense fallback={<h1>hello</h1>}>
+            <SlideShowWrapper id='slide-wrapper'>
+                <LandingPageHeader showBtn={false} subMenuHeader='landing1' contentColor='#ff4d4d'></LandingPageHeader>
 
-            <div id='slideShow'>
-                
-                <div className='slideShowText'>
-                <h1>INTERACTIVE CONCERT EXPERIENCE</h1>
+                <div id='slideShow'>
+                    
+                    <div className='slideShowText'>
+                    <h1>INTERACTIVE CONCERT EXPERIENCE</h1>
 
-                    <p>Experience your favourite artists like never before and from the comfort of your own home.</p>
-                    <Link to='/pricing'>
-                        <TryNowBtn>TRY IT NOW</TryNowBtn>
-                    </Link>
+                        <p>Experience your favourite artists like never before and from the comfort of your own home.</p>
+                        <Link to='/pricing'>
+                            <TryNowBtn>TRY IT NOW</TryNowBtn>
+                        </Link>
+                    </div>
+
+                    <div className='client-chooseBg'>
+                        {loadedImgs.map((image, index) => <span className='dot' key={index} id={index} onClick={() => chooseBgPhoto(index)}></span>)}
+                    </div>
                 </div>
 
-                <div className='client-chooseBg'>
-                    {backgroundImages.map((image, index) => <span className='dot' id={index} onClick={() => chooseBgPhoto(index)}></span>)}
-                </div>
-            </div>
-
-        </SlideShowWrapper>            
+            </SlideShowWrapper>    
+        </Suspense>        
     )
 }
 
+const runShow = (preLoadedImgs) => {
+    count++;
+    if (count === preLoadedImgs.length) {
+        // document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
+        count = 0;      
+    } 
+    document.getElementById('slide-wrapper').style.backgroundImage = `url(${preLoadedImgs[count]})`;
+    document.getElementById(`${count}`).style.backgroundColor = '#bbb';
+    document.getElementById('slide-wrapper').style.transition = "0.5s linear";
 
+    if (count - 1 > 0) {
+        document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
+
+    } 
+    
+    if (count - 1 === 0) {
+        document.getElementById(`0`).style.backgroundColor = 'transparent';
+
+    } 
+
+    if (count - 1 < 0) {
+        document.getElementById(`${preLoadedImgs.length - 1}`).style.backgroundColor = 'transparent';
+    }
+
+}
+
+    
+  
+
+
+
+const chooseBgPhoto = (photoIndex) => {
+    document.getElementById(`${count}`).style.backgroundColor = 'transparent';
+
+    count = photoIndex;
+    document.getElementById('slide-wrapper').style.backgroundImage = `url(${loadedImgs[count]})`;
+    document.getElementById('slide-wrapper').style.transition = "0.5s linear";  
+    document.getElementById(`${photoIndex}`).style.backgroundColor = '#bbb'
+}
 
 export const TryNowBtn = styled.button`
         width: 15vw;
@@ -69,36 +113,7 @@ export const TryNowBtn = styled.button`
         
 `;
 
-let backgroundImages = ['concertLights.jpg', 'secondConcert.jpg', 'thirdConcert.jpg'];
-let count = 0;
 
-// const beginSlideShow = () => {}
-
-    // export const setSlideBg = setInterval(() => {
-    //     count++;
-    //     if (count === backgroundImages.length) {
-    //         // document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
-    //         count = 0;      
-    //     } 
-    //     document.getElementById('slide-wrapper').style.backgroundImage = `url(${backgroundImages[count]})`;
-    //     document.getElementById(`${count}`).style.backgroundColor = '#bbb';
-    //     document.getElementById('slide-wrapper').style.transition = "0.5s linear";
-
-    //     if (count - 1 > 0) {
-    //         document.getElementById(`${count - 1}`).style.backgroundColor = 'transparent';
-
-    //     } 
-        
-    //     if (count - 1 === 0) {
-    //         document.getElementById(`0`).style.backgroundColor = 'transparent';
-
-    //     } 
-
-    //     if (count - 1 < 0) {
-    //         document.getElementById(`${backgroundImages.length - 1}`).style.backgroundColor = 'transparent';
-
-    //     }
-    // }, 10000);
 
 const SlideShowWrapper = styled.article`
     width: 100%;
@@ -184,7 +199,14 @@ const SlideShowWrapper = styled.article`
             }
 
         }
-       
+        .client-chooseBg {
+            .dot {
+                width: 3vw;
+                height: 3vh;
+                /* border: solid black 10px; */
+            }
+
+        }
     }
 
     @media screen and (max-width: 768px) {
@@ -198,6 +220,8 @@ const SlideShowWrapper = styled.article`
                 }
             }
         }
+        
+      
     }
 
     @media screen and (max-width: 450px) {
@@ -205,11 +229,12 @@ const SlideShowWrapper = styled.article`
             .slideShowText {
                 p {
                     width: 100%;
+                    padding: 1em;
                     transform: translate(0%);
                 }
 
             }
-           
+  
         }
     }
 

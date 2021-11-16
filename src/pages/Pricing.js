@@ -14,7 +14,7 @@ export default function Pricing() {
     return (
         <div>
             <PricePlans></PricePlans>
-            <SectionWrapper bgColor='#ff4d4d' style={{height: 650}} id='perks'>
+            <SectionWrapper bgColor='#ff4d4d'  id='perks'>
                 <LandingPageHeader subMenuHeader='pricingPage2'  bgMenuColor='black' contentColor='#ff4d4d' showBtn={false}></LandingPageHeader>
                 <LandingPerks style={{height: 300}} pColor='black'></LandingPerks>
             </SectionWrapper>

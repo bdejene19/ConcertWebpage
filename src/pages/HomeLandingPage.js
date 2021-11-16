@@ -17,7 +17,7 @@ export default function HomeLandingPage() {
             <Suspense fallback={<h1>hello</h1>}>
                 <HomeContainer>
                     <SectionWrapper>
-                        <SlideShow></SlideShow>
+                        <SlideShow bgPhotos={['concertLights.jpg', 'secondConcert.jpg', 'thirdConcert.jpg']}></SlideShow>
                     </SectionWrapper>
 
                     <SectionWrapper bgColor='#ff4d4d' className='scrollTo'>

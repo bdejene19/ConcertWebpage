@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {SubHeader} from '../homepage/LandingPerks';
 import LandingPageHeader from '../homepage/LandingPageHeader';
-import MusicNoteIcon from '@material-ui/icons/MusicNote';
-import {Link} from 'react-router-dom';
+import PlanOption from './PlanOption';
 
 export default function PricePlans() {
     return (
@@ -15,133 +13,9 @@ export default function PricePlans() {
                 <p className='pricing-caption'>Test out our app today! Choose from the three subscription based payment models.</p>
                 <br></br>
                 <Prices>  
-                    <div>
-                        <div style={{color: '#ff4d4d'}}>
-                            <SubHeader className='plan-name'>Basic<HorizontalBreak borderColor='#ff4d4d' largeWidth='70%'></HorizontalBreak>Monthly</SubHeader>
-                            <h1><b>$9</b></h1>
-                        </div>
-                        <br></br>
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Very good.</p>
-                        </div>
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Amazing.</p>
-                        </div>
-                        
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Perfect Job.</p>
-                        </div>
-                        
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Love This.</p>
-                        </div>
-
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>It's so good.</p>
-                        </div>
-
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Features.</p>
-                        </div>
-
-                        <br></br>
-                        <Link to='/payNow'>
-                            <button className='tryNow' style={{backgroundColor: '#ff4d4d'}}><b>SELECT</b></button>
-                        </Link>
-                    </div>
-
-                    <div>
-                        <div style={{color: '#ffc233'}}>
-                            <SubHeader className='plan-name'>Advanced<HorizontalBreak borderColor='#ffc223' largeWidth='70%'></HorizontalBreak>Yearly</SubHeader>
-                            <h1><b>$99</b></h1>
-                        </div>
-                        <br></br>
-                    
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Very very good.</p>
-                        </div>
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Even Amazing.</p>
-                        </div>
-                        
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Perfect Job.</p>
-                        </div>
-                        
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Love this More.</p>
-                        </div>
-
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>It's so so good.</p>
-                        </div>
-
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>More Features.</p>
-                        </div>
-
-                        <br></br>
-                        <Link to='/payNow'>
-                            <button className='tryNow' style={{backgroundColor: '#ffc233'}}><b>SELECT</b></button>
-                        </Link>
-
-                    </div>
-
-                    <div>
-                        <div style={{color: 'aqua'}}>
-                            <SubHeader className='plan-name'>Pro<HorizontalBreak borderColor='aqua' largeWidth='70%'></HorizontalBreak>Yearly</SubHeader>
-                            <h1><b>$120</b></h1>
-                        </div>
-
-                        <br></br>
-                        
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Very very good.</p>
-                        </div>
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Even Amazing.</p>
-                        </div>
-                        
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Perfect Job.</p>
-                        </div>
-                        
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>Love this More.</p>
-                        </div>
-
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>It's so so good.</p>
-                        </div>
-
-                        <div className='price-text'>
-                            <MusicNoteIcon className='music-point'></MusicNoteIcon>
-                            <p>More Features.</p>
-                        </div>
-                        <br></br>
-                        
-                        <Link to='/payNow'>
-                            <button className='tryNow' style={{backgroundColor: 'aqua'}}><b>SELECT</b></button>
-                        </Link>
-
-                    </div>
+                    <PlanOption plan='Basic' price='9' headerColor='#ff4d4d'/>
+                    <PlanOption plan='Advanced' price='99' veryGood='very' headerColor='#ffc233' extraFeatures='More '/>
+                    <PlanOption plan='Pro' price='120' veryGood='very' headerColor='aqua' extraFeatures='Even More ' />
                 </Prices>
             </PricingContainer>
         </div>

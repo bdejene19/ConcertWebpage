@@ -1,65 +1,23 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import {Link} from 'react-router-dom';
+import { openMenu } from './homeFunctions';
 
 export default function LandingPageHeader(props) {
     const [isMenuOpen, setMenuOpen] = useState(false);
 
-    const openMenu = (targetElement) => {
-        let openStyling = `  transition: 0.5s linear;
-        height: 42vh;
-        border-radius: 0 50% 50% 40%;
-        visibility: visible;
-        z-index: 2;`
-
-        let width = '';
-        let windowWidth = window.innerWidth;
-        if (isMenuOpen === false) {
-            if (windowWidth >= 1000) {
-                document.getElementById(`${targetElement}`).style.cssText = `
-               ${openStyling}
-               width: 45%; 
-
-            `;
-            } else if (windowWidth <= 768 && windowWidth > 450) {
-                document.getElementById(`${targetElement}`).style.cssText = `
-                ${openStyling}
-                width: 45vw;
-                height: 35vh; 
- 
-             `; 
-
-            } else if (windowWidth <= 450) {
-                document.getElementById(`${targetElement}`).style.cssText = `
-                ${openStyling}
-                width: 80vw;
-                height: 40vh; 
- 
-             `; 
-            } 
-           
-        }   
-         else {
-            document.getElementById(`${targetElement}`).style.cssText = `
-                transition: 0.5s linear;
-                width: 0; 
-                height: 0vh;
-                visibility: hidden;
-                border-radius: 0 50% 50% 50%;                
-            `;
-
-
-        }
-        setMenuOpen(!isMenuOpen);      
-    }
+    useEffect(() => {
+        openMenu(props.subMenuHeader, isMenuOpen);
+    }, [isMenuOpen, props.subMenuHeader])
+   
 
     return (
-        <SectionHeader>
+        <SectionHeader key={(index) => index}>
             <div style={{position: 'relative'}}>
                 <HeaderContent headerColor={props.headerColor}>
                     <div style={{alignItems: 'center', display: 'flex', gridGap: '1em'}}>
-                        <MenuIcon fontSize='large' className='hamburgerIcon'  onClick={() => openMenu(props.subMenuHeader)}/>
+                        <MenuIcon fontSize='large' className='hamburgerIcon'  onClick={() => setMenuOpen(!isMenuOpen)}/>
                         <h2>EXP|CON</h2>
 
                     </div>

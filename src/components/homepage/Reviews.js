@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import StarRateIcon from '@material-ui/icons/StarRate';
+import { SingleReview } from './SingleReview';
+
 export default function Reviews() {
     return (
         <ReviewContainer>
@@ -10,40 +11,9 @@ export default function Reviews() {
             
             <div className='reviewsContainer'>
                 <h2>REVIEWS</h2>
-                <div className='reviewContent-reviewsContainer'>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-
-                    <h4>ARTIST</h4>
-
-                    <h5>"Love it, it's the Best. I can't live without it!"</h5>
-                </div>
-                <div className='reviewContent-reviewsContainer'>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-
-                    <h4>PRODUCER</h4>
-
-                    <h5>"Love it, it's the Best. I can't live without it!"</h5>
-                </div>
-
-                <div className='reviewContent-reviewsContainer'>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-                    <StarRateIcon className='starIcon'></StarRateIcon>
-
-                    <h4>MUSIC FAN</h4>
-
-                <h5>"Love it, it's the Best. I can't live without it!"</h5>
-                </div>
+                <SingleReview title='ARTIST' content={"Love it, it's the Best. I can't live without it!"}/>
+                <SingleReview title='PRODUCER' content={"Love it, it's the Best. I can't live without it!"}/>
+                <SingleReview title='MUSIC FAN' content={"Love it, it's the Best. I can't live without it!"}/>
             </div>
         </ReviewContainer>
     )
@@ -119,6 +89,7 @@ const ReviewContainer = styled.article`
         .reviewImgs {
             display: none;
         }
+
         .reviewContent-reviewsContainer {
             h4 {
                 font-size: 2rem;
@@ -140,7 +111,7 @@ const ReviewContainer = styled.article`
 
 
         h2 {
-            padding-bottom: 1em;
+            padding-bottom: 0;
         }
     }
 

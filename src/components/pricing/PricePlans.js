@@ -77,9 +77,7 @@ const Prices = styled.div`
         font-size: 3.5rem;
     }
 
-    p {
-        font-size: 1.75rem;
-    }
+   
 
     div {
         flex: 1 1 15em;
@@ -93,6 +91,10 @@ const Prices = styled.div`
         flex-direction: row;
         align-items: center;
         column-gap: 0.25em;
+        p {
+            font-size: 1.75rem;
+            letter-spacing: 3px;
+        }
     }
 
     .tryNow {

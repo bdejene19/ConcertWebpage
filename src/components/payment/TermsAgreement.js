@@ -5,7 +5,7 @@ import { TryNowBtn } from '../homepage/SlideShow';
 export default function TermsAgreement() {
     return (
         <TermsContainer>
-            <p>By continuing, I acknowledge that I've read and agree to the <a href='#'>Terms of Service</a> & <a href='#'>Privacy and Policy.</a></p>
+            <p>By continuing, I acknowledge that I've read and agree to the <button href='#'>Terms of Service</button> & <button href='#'>Privacy and Policy.</button></p>
             <TryNowBtn>DOWNLOAD</TryNowBtn>
         </TermsContainer>
     )
@@ -18,14 +18,19 @@ const TermsContainer = styled.div`
     width: 100%;
     padding-top: 3em;
 
-    a {
-        color: blue;
+    button {
         text-decoration: none;
         font-weight: 900;
     }
 
     p {
         padding-bottom: 2em;
+        button {
+            border: none;
+            background-color: transparent;
+            color: blue;
+            font-size: 1.25rem;
+        }
     }
 
     @media screen and (max-width: 768px) {
@@ -40,6 +45,9 @@ const TermsContainer = styled.div`
         font-size: 1rem;
         p {
             padding-bottom: 2.5em;
+            button {
+                font-size: 1rem;
+            }
             
         }
         

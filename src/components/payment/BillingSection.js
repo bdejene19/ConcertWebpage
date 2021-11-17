@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
-import Countries from './Countries';
+import BillingInfo from './BillingInfo';
+import CardForm from './CardForm';
+import PlanSelection from './PlanSelection';
 import TermsAgreement from './TermsAgreement';
 
 export default function BillingSection() {
@@ -11,115 +13,10 @@ export default function BillingSection() {
         <UserBillingInfo>
             <h1 className='payment-title'>PAYMENT</h1>
 
-            <div className='payment-1'>
-                <h6>1. Select your plan</h6>
-                <div className='plan-choices'> 
-                    <input type='radio' name='plan-type' id='basic' className='radioBtn'></input>
-                    <label htmlFor='basic' style={{color: '#ff4d4d'}}>BASIC</label>
-                    <input type='radio' name='plan-type' id='advanced' value='advanced'></input>
-                    <label htmlFor='advanced' style={{color: '#ffc233'}}>ADVANCED</label>
-                    <input type='radio' name='plan-type' id='pro' value='pro'></input>
-                    <label htmlFor='pro' style={{color: 'aqua'}}>PRO</label>      
-                </div>
-            </div>
-
-            <div className='payment-2'>
-                <div>
-
-                    <h6>2. Billing Information</h6>
-                    <form id='form-p1'>
-                        <div>
-                            <label htmlFor='fullName'>
-                                FULL NAME
-                            </label><br></br>
-                            <input type='text' id='fullName'></input><br></br>
-                            <span></span>
-                        </div>
-                    
-                        <div>
-                            <label htmlFor='billAddress'>
-                                BILLING ADDRESS
-                            </label><br></br>
-                            <input type='text' id='billAddress'></input>
-                        </div>
-                        
-
-                        <div className='smallText-input'>
-                            <div>
-                                <label htmlFor='city'>
-                                    CITY
-                                </label><br></br>
-                                <input type='text' id='city' className='smallText-bar'></input>
-
-                            </div>
-                            
-                            <div>
-                                <label htmlFor='postalCode'>
-                                    POSTAL CODE
-                                </label><br></br>
-                                <input type='text' id='postalCode' className='smallText-bar'></input>
-                            </div>           
-                        </div>
-
-                        <div>
-                            <label htmlFor='country'>
-                                COUNTRY
-                            </label><br></br>
-                            <Countries></Countries>
-                        </div>                    
-                    </form>
-                </div>
-
-            </div>
-
-            <div className='payment-3'>
-                <div>
-                    <h6>3. Credit Card Information</h6>
-
-                    <form>
-                        <div>
-                            <label htmlFor='fullName'>
-                                CARDHOLDER'S NAME
-                            </label><br></br>
-                            <input type='text' id='cardholder-name'></input>
-                        </div>
-                        
-                        <div>
-                            <label htmlFor='billAddress'>
-                                CARD NUMBER
-                            </label><br></br>
-                            <input type='text' id='billAddress'></input>
-                        </div>
-                        
-
-                        <div className='smallText-input'>
-                            <div>
-                                <label htmlFor='expiry-month'>
-                                    EXPIRY MONTH
-                                </label><br></br>
-                                <input type='text' id='expiry-month'></input>
-
-                            </div>
-                            
-                            <div>
-                                <label htmlFor='expiry-year'>
-                                    EXPIRY YEAR
-                                </label><br></br>
-                                <input type='text' className='smallText-bar' id='expiry-year'></input>
-                            </div>           
-                        </div>
-
-                        <div>
-                            <label htmlFor='cvv'>
-                                CVV
-                            </label><br></br>
-
-                            <input type='text' id='cvv'></input>
-                        </div>                    
-                    </form>
-                </div>
-
-            </div>
+            <PlanSelection/>
+            <BillingInfo/>
+            <CardForm/>
+           
             <TermsAgreement ></TermsAgreement>
         </UserBillingInfo>
     )

@@ -98,6 +98,7 @@ const PerksContainer = styled.div`
     width: 100%;
     padding-left: 4em;
     padding-right: 4em;
+    
     .perksTitle {
         letter-spacing: 5px;
         justify-self: left;

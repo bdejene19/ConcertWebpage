@@ -14,7 +14,7 @@ export default function EmailFooter() {
 
             <div className='copyright-content'>
                 <h4>EXP|CON</h4>
-                <p>2019 <CopyrightIcon style={{fontSize: 16}}></CopyrightIcon> All rights reserved | Speer Technologies Incorporated</p>
+                <p className='disclaimerText'>2019 <CopyrightIcon style={{fontSize: 16}}></CopyrightIcon> All rights reserved | Speer Technologies Incorporated</p>
             </div>
         </ContactFooter>
     )
@@ -48,11 +48,10 @@ const ContactFooter = styled.footer`
         justify-content: center;
 
         h4 {
-            font-size: 2rem;
             font-weight: 300;
         }
 
-        p {
+        .disclaimerText {
             padding-left: 4vw;
             font-size: 1.5rem;
         }
@@ -63,17 +62,14 @@ const ContactFooter = styled.footer`
 
         .email-info {
             h6 {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
         }
 
         .copyright-content {
-            h4 {
-                font-size: 4rem;
-            }
+           
 
-            p {
-                font-size: 2rem;
+            .disclaimerText {
                 padding-left: 2.45em;
             }
         }
@@ -82,18 +78,14 @@ const ContactFooter = styled.footer`
     @media screen and (max-width: 768px) {
         .email-info {
             h6 {
-                font-size: 1.75rem;
+                font-size: 1.15rem;
             }
         }
 
         .copyright-content {
-            h4 {
-                font-size: 2.75rem;
-            }
-
-            p {
-                font-size: 1.5rem;
-                padding-left: 2.35em;
+            .disclaimerText {
+                font-size: 1rem;
+                padding-left: 2em;
             }
         }
     }
@@ -106,7 +98,7 @@ const ContactFooter = styled.footer`
         .email-info {
             padding-left: 1em;
             h6 {
-                font-size: 1.25rem;
+                font-size: 1rem;
             }
         }
 
@@ -117,7 +109,7 @@ const ContactFooter = styled.footer`
                 margin-left: -0.78em;
             }
 
-            p {
+            .disclaimerText {
                 text-align: center;
                 font-size: 0.85rem;
                 padding-left: 0;

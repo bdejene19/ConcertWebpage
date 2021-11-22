@@ -5,7 +5,7 @@ import { TryNowBtn } from '../homepage/SlideShow';
 export default function TermsAgreement() {
     return (
         <TermsContainer>
-            <p>By continuing, I acknowledge that I've read and agree to the <button href='#'>Terms of Service</button> & <button href='#'>Privacy and Policy.</button></p>
+            <p className='disclaimerText'>By continuing, I acknowledge that I've read and agree to the <button href='#'>Terms of Service</button> & <button href='#'>Privacy and Policy.</button></p>
             <TryNowBtn>DOWNLOAD</TryNowBtn>
         </TermsContainer>
     )

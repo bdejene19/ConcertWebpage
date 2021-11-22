@@ -13,7 +13,6 @@ import DownloadApp from '../components/homepage/DownloadApp';
 export default function HomeLandingPage() {
     
     return (
-        <PageLayout>
             <Suspense fallback={<h1>hello</h1>}>
                 <HomeContainer>
                     <SectionWrapper>
@@ -44,7 +43,6 @@ export default function HomeLandingPage() {
                     <EmailFooter></EmailFooter>
                 </HomeContainer>
             </Suspense>  
-        </PageLayout>          
     )
 }
 
@@ -67,44 +65,5 @@ const HomeContainer = styled.div`
     }
 `;
 
-const PageLayout = styled.div`
-    h1 {
-        font-size: 4rem;
-    }
 
-    p {
-        font-size: 2.75rem;;
-    }
-
-    @media screen and  (max-width: 1024px) {
-        h1 {
-            font-size: 3rem;
-        }
-
-        p {
-            font-size: 2rem;
-        }
-    };
-
-    @media screen and (max-width: 768px) {
-        h1 {
-            font-size: 2.5rem;
-        }
-
-        p {
-            font-size: 1.35rem;
-        }
-        
-    }
-
-    @media screen and (max-width: 430px) {
-        h1 {
-            font-size: 1.75rem;
-        }
-
-        p {
-            font-size: 1.25rem;
-        }
-    }
-`;
 

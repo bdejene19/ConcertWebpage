@@ -10,7 +10,7 @@ export default function PlanOption(props) {
         <div>
             <div style={{color: props.headerColor}}>
                 <SubHeader className='plan-name'>{props.plan}<HorizontalBreak borderColor={props.headerColor} largeWidth='70%'></HorizontalBreak>Monthly</SubHeader>
-                <h1><b>{props.price}</b></h1>
+                <h1><b>${props.price}</b></h1>
             </div>
             <br></br>
             <div className='price-text'>

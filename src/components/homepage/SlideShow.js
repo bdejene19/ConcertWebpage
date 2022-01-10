@@ -6,7 +6,7 @@ import { chooseBgPhoto, preloadImgs, runShow } from './homeFunctions';
 let count = 0;
 let loadedImgs = ['concertLights.jpg', 'secondConcert.jpg', 'thirdConcert.jpg'];
 
-
+let startSlides = '';
 export default function SlideShow(props) {
   
     useEffect(() => {
@@ -14,7 +14,7 @@ export default function SlideShow(props) {
         document.getElementById('slide-wrapper').style.backgroundImage = `url(${preLoaded[count]})`;
         document.getElementById(count.toString()).style.backgroundColor = '#bbb';   
         
-        let  startSlides = setInterval(() => {
+        startSlides = setInterval(() => {
             count++
             if (count === preLoaded.length) {
                 count = 0;      
@@ -42,7 +42,7 @@ export default function SlideShow(props) {
                     </div>
 
                     <div className='client-chooseBg'>
-                        {loadedImgs.map((image, index) => <span className='dot' key={index} id={index} onClick={() => chooseBgPhoto(index, count)}></span>)}
+                        {loadedImgs.map((image, index) => <span className='dot' key={index} id={index} onClick={() => {chooseBgPhoto(index, count); count = index;}}></span>)}
                     </div>
                 </div>
 

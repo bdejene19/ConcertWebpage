@@ -90,5 +90,6 @@ export const chooseBgPhoto = (photoIndex, counter) => {
     counter = photoIndex;
     slideWrapper.style.backgroundImage = `url(${loadedImgs[counter]})`;
     slideWrapper.style.transition = "0.5s linear";  
-    document.getElementById(`${photoIndex}`).style.backgroundColor = '#bbb'
+    document.getElementById(`${photoIndex}`).style.backgroundColor = '#bbb';
 }
+

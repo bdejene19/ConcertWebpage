@@ -13,26 +13,38 @@ export default function EmailFooter() {
             </div>
 
             <div className='copyright-content'>
-                <h4>EXP|CON</h4>
-                <p className='disclaimerText'>2019 <CopyrightIcon style={{fontSize: 16}}></CopyrightIcon> All rights reserved | Speer Technologies Incorporated</p>
+                <div className='contact left'>
+                    <h4>EXP</h4>
+                    <p className='disclaimerText'>2019 <CopyrightIcon style={{fontSize: 16}} className='copy-icon'></CopyrightIcon> All rights reserved </p>
+                </div>
+
+                <div className='contact right'>
+                    <h4>CON</h4>
+                    <p className='disclaimerText'> Speer Technologies Incorporated</p>
+
+                </div>
             </div>
         </ContactFooter>
     )
 }
 
 const ContactFooter = styled.footer`
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid;
+        grid-template-columns: 1fr 1fr;
     height: 35vh;
     background-color: slateblue;
     color: white;
-    padding: 3em;
 
     .email-info {
         flex: 1 1 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
+        padding: 2em;
+        padding-bottom: 0;
+        grid-column: 1/3;
         grid-gap: 0.5em;
 
         h6 {
@@ -42,17 +54,51 @@ const ContactFooter = styled.footer`
     }
 
     .copyright-content {
-        flex: 1 1 100%;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100vw;
 
-        h4 {
-            font-weight: 300;
+
+        .contact {
+            display: flex;
+            flex-direction: column; 
+            row-gap: 1em;
+            column-gap: 1em;
+            
+            
+
+                h4 {
+                    font-weight: 300;
+                }
+                p {
+                    /* display: flex; */
+                    /* justify-items: baseline; */
+                }
+
+                .copy-icon {
+                    font-size: 16px;
+                }
+        }
+        .left {
+            text-align: right;
+            row-gap: 1em;
+            column-gap: 1em;
+            h4,p {
+                border-right: solid white 2px;
+                padding-right: 0.2em;
+            }
+
+        
+
+            
         }
 
+        .right {
+            padding-left: 0.2em;
+        }
+       
+
         .disclaimerText {
-            padding-left: 4vw;
             font-size: 1.5rem;
         }
     }
@@ -63,14 +109,6 @@ const ContactFooter = styled.footer`
         .email-info {
             h6 {
                 font-size: 1.5rem;
-            }
-        }
-
-        .copyright-content {
-           
-
-            .disclaimerText {
-                padding-left: 2.45em;
             }
         }
     }
@@ -85,7 +123,11 @@ const ContactFooter = styled.footer`
         .copyright-content {
             .disclaimerText {
                 font-size: 1rem;
-                padding-left: 2em;
+                /* padding-left: 2em; */
+            }
+
+            .copy-icon {
+                font-size: 12px;
             }
         }
     }
@@ -103,14 +145,11 @@ const ContactFooter = styled.footer`
         }
 
         .copyright-content {
-            padding-right: 0;
             h4 {
                 font-size: 2rem;
-                margin-left: -0.78em;
             }
 
             .disclaimerText {
-                text-align: center;
                 font-size: 0.85rem;
                 padding-left: 0;
                 padding-right: 0;

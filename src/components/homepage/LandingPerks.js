@@ -15,7 +15,7 @@ export default function LandingPerks(props) {
                     <SubHeader subHeadColor={props.titleOneColor} className='smallScreen-subH'>Subscription Payment Model</SubHeader>
 
                     {/* <h3 subHeadColor='brown'>Subscription<br></br>Payment <br></br>Model</h3> */}
-                    <h5>No commitment, cancel anytime. Never worry about forgetting a payment again!</h5>
+                    <h5 style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</h5>
                 </div>
                 <div>
                     <HorizontalBreak borderColor={props.titleTwoColor} style={{width: 65}}></HorizontalBreak>

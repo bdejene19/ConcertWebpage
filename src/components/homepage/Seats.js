@@ -64,7 +64,6 @@ const SeatsSection = styled(SoundContainer)`
         display: grid;
         justify-content: right;
         height: 34.9vh;
-        overflow: hidden;
         .half-circle {
             content: '';
             width: 30vw;

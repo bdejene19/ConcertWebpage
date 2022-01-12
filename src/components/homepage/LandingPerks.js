@@ -15,21 +15,21 @@ export default function LandingPerks(props) {
                     <SubHeader subHeadColor={props.titleOneColor} className='smallScreen-subH'>Subscription Payment Model</SubHeader>
 
                     {/* <h3 subHeadColor='brown'>Subscription<br></br>Payment <br></br>Model</h3> */}
-                    <h4 style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</h4>
+                    <h5>No commitment, cancel anytime. Never worry about forgetting a payment again!</h5>
                 </div>
                 <div>
                     <HorizontalBreak borderColor={props.titleTwoColor} style={{width: 65}}></HorizontalBreak>
                     <SubHeader subHeadColor={props.titleTwoColor} className='lgScreen-subH'>No Fee<br></br>Cancelation<br></br>Policy</SubHeader>
                     <SubHeader subHeadColor={props.titleTwoColor} className='smallScreen-subH'>No Fee Cancelation Policy</SubHeader>
 
-                    <h4 style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</h4>
+                    <h5 style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</h5>
                 </div>
                 <div>
                     <HorizontalBreak borderColor={props.titleThreeColor} style={{width: 65}}></HorizontalBreak>
                     <SubHeader subHeadColor={props.titleThreeColor} className='lgScreen-subH'>Subscription<br></br>Payment <br></br>Model</SubHeader>
                     <SubHeader subHeadColor={props.titleThreeColor} className='smallScreen-subH'>Subscription Payment Model</SubHeader>
 
-                    <h4 style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</h4>
+                    <h5 style={{color: props.pColor || 'white'}}>No commitment, cancel anytime. Never worry about forgetting a payment again!</h5>
                 </div>
             </PerksGrid>
 
@@ -59,7 +59,7 @@ export const PerksGrid = styled.article`
         flex: 1 1 20em;
      }
 
-    h4 {
+    h5 {
         font-size: 1.75rem;
         width: 95%;
         font-weight: 500;
@@ -70,14 +70,14 @@ export const PerksGrid = styled.article`
     @media screen and (max-width: 1200px) {
         row-gap: 1em;
 
-        h4 {
+        h5 {
             font-size: 1.5rem;
         }
     }
 
     @media screen and (max-width: 768px) {
         row-gap: 2.5em;
-        h4 {
+        h5 {
             font-size: 1.2rem;
             width: 100%;
             padding: 0;

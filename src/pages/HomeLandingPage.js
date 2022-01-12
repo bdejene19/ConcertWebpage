@@ -50,6 +50,7 @@ export const SectionWrapper = styled.section`
     width: 100vw;
     height: 99vh;
     background-color: ${props => props.bgColor};
+    overflow: hidden;
 `;
 
 const HomeContainer = styled.div`

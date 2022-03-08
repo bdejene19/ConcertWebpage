@@ -6,7 +6,13 @@ https://focused-heyrovsky-378c47.netlify.app/
 ## Description 
 A multipage web application, with a purpose to show professionalism in execution of UX wireframes and digitally showcase the concert experience. EXP|CON contains three main pages: landing-page, pricing and payment. Components were modularized to reuse code where available on different parts of site (e.g. perks section on landing-page vs pricing). Payment system does not contain any use of Stripe for actual payments, but acts as the payment workflow experience.
 ### Table of Contents
-- [Description](##what-the-project-taught-me)
+- [Description](#description)
+- [Screenshots](#live-screenshots)
+- [Challenges](#difficulties)
+- [Skills Learned](#what-the-project-taught-me)
+- [Improvements](#improvements)
+- [Contributors](#contributors)
+- [Contact Info](#contact)
 
 ## Technologies Used
 - React
@@ -35,7 +41,7 @@ A multipage web application, with a purpose to show professionalism in execution
 - Modularize and begin creating a code architecture
 - CSS PseudoElements
 
-## Where I can Improve
+## Improvements
 - use Figma to develop custom SVGs for the user experience
 - develop backend/OAuth for actual ticket sales (or E-commerce in general)\
 - Create responsive design

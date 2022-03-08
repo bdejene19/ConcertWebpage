@@ -1,6 +1,7 @@
 ### Live Version
 https://focused-heyrovsky-378c47.netlify.app/
 
+<img width="1440" alt="Screen Shot 2022-03-07 at 9 04 09 PM" src="https://user-images.githubusercontent.com/67334768/157151661-2b426059-f9e0-4702-9f22-c07e74d50385.png">
 
 # EXP|CON Concert
 A multipage web application, with a purpose to show professionalism in execution of UX wireframes and digitally showcase the concert experience. EXP|CON contains three main pages: landing-page, pricing and payment. Components were modularized to reuse code where available on different parts of site (e.g. perks section on landing-page vs pricing). Payment system does not contain any use of Stripe for actual payments, but acts as the payment workflow experience.

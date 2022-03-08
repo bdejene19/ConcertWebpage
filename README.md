@@ -38,7 +38,7 @@ A multipage web application, with a purpose to show professionalism in execution
 - Create responsive design
 
 
-Contact
+## Contact
 Email: bdejene19@gmail.com
 
 Github: https://github.com/bdejene19
